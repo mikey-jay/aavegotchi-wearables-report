@@ -17,6 +17,7 @@ TIME_RANGE_SECONDS = TIME_RANGE_DAYS * SECONDS_IN_A_DAY
 END_TIME = UPDATE_TIME
 START_TIME = END_TIME - TIME_RANGE_SECONDS
 QUERY_TIME_INTERVAL = 30 * SECONDS_IN_A_DAY # break up the query into 30 day chunks
+EXCLUDE_WEARABLE_IDS = [0, 162] # exclude the void and Miami Shirt (never minted)
 
 def get_time_intervals(start, end, step):
     while start <= end:
@@ -65,7 +66,7 @@ def get_wearable_types_df():
     
     wearables_query = get_core_matic_query(
     { 'itemTypes': {
-        'params': { 'where': { 'category': ITEM_TYPE_CATEGORY_WEARABLE, 'id_not': UPDATE_TIME_HASH, 'id_not': 0, 'canBeTransferred': True } },
+        'params': { 'where': { 'category': ITEM_TYPE_CATEGORY_WEARABLE, 'id_not': UPDATE_TIME_HASH, 'id_not_in': EXCLUDE_WEARABLE_IDS, 'canBeTransferred': True } },
         'fields': ["id", "name", "traitModifiers", "slotPositions", "maxQuantity", "rarityScoreModifier"] }}
     )
 
