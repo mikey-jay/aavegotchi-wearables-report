@@ -114,6 +114,7 @@ def get_gotchis_wearables_df(block):
 
 def get_wearable_equipped_df(block):
     gotchis_df = get_gotchis_wearables_df(block)
+    types_df = get_wearable_types_df()
     has_wearable_equipped = lambda id: list(map(lambda w: id in w, gotchis_df['equippedWearables'].to_list()))
     get_wearable_equipped_count = lambda id: sum(has_wearable_equipped(id))
     get_unique_owner_count = lambda id: gotchis_df[has_wearable_equipped(id)]['owner.id'].nunique()
