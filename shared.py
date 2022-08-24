@@ -18,6 +18,7 @@ END_TIME = UPDATE_TIME
 START_TIME = END_TIME - TIME_RANGE_SECONDS
 QUERY_TIME_INTERVAL = 30 * SECONDS_IN_A_DAY # break up the query into 30 day chunks
 EXCLUDE_WEARABLE_IDS = [0, 162] # exclude the void and Miami Shirt (never minted)
+RARITY_FARMING_BLOCKS = [14082019, 20633779, 25806269, 31770753] # adjusted blocks for subgraph error with rf szn 2-3 20633778, 25806267
 
 def get_time_intervals(start, end, step):
     while start <= end:
@@ -66,7 +67,7 @@ def get_wearable_types_df():
     
     wearables_query = get_core_matic_query(
     { 'itemTypes': {
-        'params': { 'where': { 'category': ITEM_TYPE_CATEGORY_WEARABLE, 'id_not': UPDATE_TIME_HASH, 'id_not_in': EXCLUDE_WEARABLE_IDS, 'canBeTransferred': True } },
+        'params': { 'where': { 'category': ITEM_TYPE_CATEGORY_WEARABLE, 'id_not': UPDATE_TIME_HASH, 'id_not_in': list(map(str, EXCLUDE_WEARABLE_IDS)), 'canBeTransferred': True } },
         'fields': ["id", "name", "traitModifiers", "slotPositions", "maxQuantity", "rarityScoreModifier"] }}
     )
 
@@ -98,3 +99,24 @@ def get_wearable_types_df():
     wearable_types_df['rarity'] = wearable_types_df['rarityScoreModifier'].apply(lambda x: RARITY_SCORE_MODIFIERS[x])
 
     return wearable_types_df
+
+def get_gotchis_wearables_df(block):
+    types_df = get_wearable_types_df()
+    gotchis_query = get_core_matic_query(
+        { 'aavegotchis': {
+            'params': { 'block': { 'number': block }, 'where': { 'status': 3 } },
+            'fields': ["id", { "owner": { 'fields': ['id']} }, "equippedWearables"] }}
+    )
+    gotchis_result = gotchis_query.execute(USE_CACHE)
+    gotchis_wearables_df = get_subgraph_result_df(gotchis_result)
+    has_wearables = list(map(any, gotchis_wearables_df['equippedWearables'].to_list()))
+    return gotchis_wearables_df[has_wearables]
+
+def get_wearable_equipped_df(block):
+    gotchis_df = get_gotchis_wearables_df(block)
+    has_wearable_equipped = lambda id: list(map(lambda w: id in w, gotchis_df['equippedWearables'].to_list()))
+    get_wearable_equipped_count = lambda id: sum(has_wearable_equipped(id))
+    get_unique_owner_count = lambda id: gotchis_df[has_wearable_equipped(id)]['owner.id'].nunique()
+    equipped_df = pd.DataFrame(types_df.index.map(get_wearable_equipped_count).rename('equippedCount'), types_df.index)
+    owner_equipped_df = equipped_df.join(pd.DataFrame(types_df.index.map(get_unique_owner_count).rename('ownerCount'), types_df.index))
+    return owner_equipped_df
