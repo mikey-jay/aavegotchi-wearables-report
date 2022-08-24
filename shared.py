@@ -4,7 +4,7 @@ from main import *
 import datetime
 
 ITEM_TYPE_CATEGORY_WEARABLE = 0
-UPDATE_TIME = 1660745008 # Aug 17 approx 10 AM
+UPDATE_TIME = 1661353294 # Aug 24 approx 11 AM
 WEI_PER_ETH = 10 ** 18
 USE_CACHE = True
 TRAIT_NAMES = ['NRG', 'AGG', 'SPK', 'BRN', 'EYS', 'EYC']
