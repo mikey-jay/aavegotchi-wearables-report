@@ -36,7 +36,7 @@ itables.options.dom = ITABLE_DOM_SHORT
 
 def get_page_header(title):
     get_readable_time = lambda ts: datetime.date.fromtimestamp(ts).strftime('%Y-%m-%d')
-    return (md("#Aavegotchi Wearables Market Dashboard\n## {t}\nUsing data from {start} to {end}".format(t=title, start=get_readable_time(START_TIME), end=get_readable_time(END_TIME))))
+    return (md("# Aavegotchi Wearables Market Dashboard\n## {t}\nUsing data from {start} to {end}".format(t=title, start=get_readable_time(START_TIME), end=get_readable_time(END_TIME))))
 
 def get_table_title(title):
     return '<caption style="caption-side: top; text-align: left; font-size: 150%; margin-bottom: 1em; margin-top: 1em; ">' + title + '</caption>'
@@ -45,6 +45,15 @@ def get_time_intervals(start, end, step):
     while start <= end:
         yield start
         start += step
+
+get_rarity_color = lambda rarity: {
+    'common': 'mediumslateblue',
+    'uncommon': 'darkturquoise',
+    'rare': 'deepskyblue',
+    'legendary': 'orange',
+    'mythical': 'hotpink',
+    'godlike': 'mediumspringgreen'
+}[rarity]
 
 def get_first_day_of_week(d):
     weekday = d.isocalendar().weekday - 1
@@ -142,3 +151,7 @@ def get_wearable_equipped_df(block):
     equipped_df = pd.DataFrame(types_df.index.map(get_wearable_equipped_count).rename('equippedCount'), types_df.index)
     owner_equipped_df = equipped_df.join(pd.DataFrame(types_df.index.map(get_unique_owner_count).rename('ownerCount'), types_df.index))
     return owner_equipped_df
+
+def get_wearables_purchases_types_df():
+    purchases_df = get_wearable_purchases_df()
+    types_df = get_wearable_types_df()
