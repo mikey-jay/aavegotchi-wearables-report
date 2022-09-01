@@ -2,6 +2,9 @@ from main import *
 
 # project-specific code goes here
 import datetime
+from itables import show
+import itables.options
+from IPython.display import Markdown as md
 
 ITEM_TYPE_CATEGORY_WEARABLE = 0
 UPDATE_TIME = 1661353294 # Aug 24 approx 11 AM
@@ -19,6 +22,24 @@ START_TIME = END_TIME - TIME_RANGE_SECONDS
 QUERY_TIME_INTERVAL = 30 * SECONDS_IN_A_DAY # break up the query into 30 day chunks
 EXCLUDE_WEARABLE_IDS = [0, 162] # exclude the void and Miami Shirt (never minted)
 RARITY_FARMING_BLOCKS = [14082019, 20633779, 25806269, 31770753] # adjusted blocks for subgraph error with rf szn 2-3 20633778, 25806267
+ITABLE_DOM_LONG = "lftipr"
+ITABLE_DOM_SHORT = "tr"
+
+
+# setup matplotlib
+plt.style.use('seaborn-whitegrid')
+
+# setup itables
+itables.options.paging = False
+itables.options.columnDefs = [{"className": "dt-left", "targets": [0]}]
+itables.options.dom = ITABLE_DOM_SHORT
+
+def get_page_header(title):
+    get_readable_time = lambda ts: datetime.date.fromtimestamp(ts).strftime('%Y-%m-%d')
+    return (md("#Aavegotchi Wearables Market Dashboard\n## {t}\nUsing data from {start} to {end}".format(t=title, start=get_readable_time(START_TIME), end=get_readable_time(END_TIME))))
+
+def get_table_title(title):
+    return '<caption style="caption-side: top; text-align: left; font-size: 150%; margin-bottom: 1em; margin-top: 1em; ">' + title + '</caption>'
 
 def get_time_intervals(start, end, step):
     while start <= end:
