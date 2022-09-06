@@ -1,0 +1,9 @@
+numpy>=1.21.0
+pandas>=1.3.0
+vcrpy>=4.1.1
+requests>=2.27.1
+ipykernel
+voila
+jupyterlab-myst
+matplotlib
+itables
