@@ -205,7 +205,7 @@ def get_gotchis_wearables_df(block):
                 'params': { 'block': { 'number': block }, 'where': { 'status': 3 } },
                 'fields': ["id", { "owner": { 'fields': ['id']} }, "equippedWearables"] }}
         )
-        gotchis_result = gotchis_query.execute(USE_CACHE)
+        gotchis_result = gotchis_query.execute(False)
         gotchis_wearables_df = get_subgraph_result_df(gotchis_result)
         gotchis_wearables_df.to_csv(local_db_file)
     
