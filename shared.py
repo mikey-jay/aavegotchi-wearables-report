@@ -109,7 +109,7 @@ def get_first_day_of_week(d):
 
 def get_wearable_purchases_df():
 
-    local_db_file = 'db/wearable_purchases.csv'
+    local_db_file = 'data/wearable_purchases.csv'
 
     db_exists = os.path.exists(local_db_file)
     last_db_purchase_time = 0
@@ -193,7 +193,7 @@ def get_wearable_types_df():
     return wearable_types_df
 
 def get_gotchis_wearables_df(block):
-    local_db_file = 'db/gotchi_wearables_{b}.csv'.format(b=block)
+    local_db_file = 'data/gotchi_wearables_{b}.csv'.format(b=block)
     db_exists = os.path.exists(local_db_file)
     
     if (db_exists):
