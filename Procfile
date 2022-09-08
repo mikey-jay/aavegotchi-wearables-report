@@ -1,1 +1,1 @@
-web: voila wearables_dashboard.ipynb --port=$PORT --no-browser --Voila.ip=0.0.0.0
+web: voila wearables_dashboard.ipynb --port=$PORT --no-browser --Voila.ip=0.0.0.0 --MappingKernelManager.cull_interval=60 --MappingKernelManager.cull_idle_timeout=120
