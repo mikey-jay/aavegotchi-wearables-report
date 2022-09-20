@@ -20,7 +20,7 @@ def get_first_of_month_utc(unix_time):
 ITEM_TYPE_CATEGORY_WEARABLE = 0
 UPDATE_TIME = get_midnight_utc_today()
 WEI_PER_ETH = 10 ** 18
-USE_CACHE = True
+USE_CACHE = False
 TRAIT_NAMES = ['NRG', 'AGG', 'SPK', 'BRN', 'EYS', 'EYC']
 SLOT_POSITION_NAMES = ['Body', 'Face', 'Eyes', 'Head', 'Hand L', 'Hand R', 'Pet', 'BG']
 RARITY_SCORE_MODIFIERS = { 1: 'common', 2: 'uncommon', 5: 'rare', 10: 'legendary', 20: 'mythical', 50: 'godlike'  }
