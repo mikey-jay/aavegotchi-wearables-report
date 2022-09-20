@@ -7,3 +7,4 @@ voila
 jupyterlab-myst
 matplotlib
 itables
+nbconvert

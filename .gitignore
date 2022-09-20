@@ -3,6 +3,11 @@ db/*.csv
 db/*.sh
 db/*.db
 
+.DS_store
+
+# dashboards that should be rendered via scheduled task
+public/wearables.html
+
 # vcr cassettes
 subgraph/cache.yaml
 
