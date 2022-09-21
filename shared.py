@@ -109,6 +109,18 @@ def get_first_day_of_week(d):
 
 def get_wearable_purchases_df():
 
+    purchases_result = []
+    for interval_start in get_time_intervals(START_TIME, END_TIME, QUERY_TIME_INTERVAL):
+        interval_end = min(interval_start + QUERY_TIME_INTERVAL, END_TIME)
+        purchases_query = get_core_matic_query(
+            { 'erc1155Purchases': {
+                'params': { 'where': { 'category': ITEM_TYPE_CATEGORY_WEARABLE, 'timeLastPurchased_lt': interval_end, 'timeLastPurchased_gte': interval_start } },
+                'fields': ["id", "listingID", "erc1155TypeId", "priceInWei", "quantity", "timeLastPurchased"] }}
+        )
+        purchases_result += purchases_query.execute(USE_CACHE)
+    purchases_df = get_subgraph_result_df(purchases_result)
+
+    """
     local_db_file = 'data/wearable_purchases.csv'
 
     db_exists = os.path.exists(local_db_file)
@@ -135,6 +147,7 @@ def get_wearable_purchases_df():
             purchases_result += purchases_query.execute(USE_CACHE)
         purchases_df = pd.concat([purchases_df, get_subgraph_result_df(purchases_result)])
         purchases_df.to_csv(local_db_file)
+    """
 
     # data types
     purchases_int_fields = ['listingID', 'erc1155TypeId', 'quantity', 'timeLastPurchased']
@@ -227,8 +240,6 @@ def get_seconds_since_modified(filename):
     return time.time() - os.path.getmtime(full_path)
 
 def get_wearables_purchases_types_df(types_df, purchases_df):
-    purchases_df = get_wearable_purchases_df()
-    #types_df = get_wearable_types_df()
     types_merge_columns = ['name', 'rarity', 'slotNames', 'NRG Effect', 'AGG Effect', 'SPK Effect', 'BRN Effect']
     purchases_types_df = purchases_df.merge(types_df[types_merge_columns], how="left", left_on='erc1155TypeId', right_index=True)
     return purchases_types_df
