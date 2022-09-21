@@ -1,1 +1,1 @@
-web: python -m http.server $PORT --bind 0.0.0.0 --directory public
+web: bin/update_wearables_dashboard & python -m http.server $PORT --bind 0.0.0.0 --directory public
