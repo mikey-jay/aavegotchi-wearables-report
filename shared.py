@@ -64,14 +64,14 @@ def get_bar_charts(df, category, metrics, colors):
         annotate_bars(ax.bar(df[category], df[m], color=colors[row]), ax)
         ax.set_title('{m}'.format(m=m))
 
-def annotate_bars(bars, ax, format='{:,.0f}'):
+def annotate_bars(bars, ax, format='{:,.0f}', rotation=0):
     for b in bars:
         height = b.get_height()
         ax.annotate(format.format(height),
         xy=(b.get_x() + b.get_width() / 2, height + b.get_y()),
         xytext=(0, 3), # 3 points vertical offset
         textcoords="offset points",
-        ha='center', va='bottom')       
+        ha='center', va='bottom', rotation=rotation)       
 
 def show_itable(df, order=[[0, 'asc']], dom=ITABLE_DOM_SHORT, title='', precision=0, column_formats={}):
     formatted_df = df.copy()
