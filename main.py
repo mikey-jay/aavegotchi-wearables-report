@@ -5,7 +5,7 @@ import time
 import math
 from subgraph.query import SubgraphQuery
 
-AAVEGOTCHI_CORE_MATIC = "https://api.thegraph.com/subgraphs/name/aavegotchi/aavegotchi-core-matic"
+AAVEGOTCHI_CORE_MATIC = "https://subgraph.satsuma-prod.com/tWYl5n5y04oz/aavegotchi/aavegotchi-core-matic/api"
 
 def get_subgraph_result_df(result_obj, id_index=True):
     df = pd.DataFrame(pd.json_normalize(result_obj))
