@@ -48,8 +48,6 @@ NAVIGATION_PAGES = [
 # setup matplotlib
 plt.style.use('seaborn-whitegrid')
 
-# pandas options
-pd.set_option("styler.format.thousands", ",")
 
 # setup itables
 itables.options.paging = False
@@ -75,9 +73,16 @@ def annotate_bars(bars, ax, format='{:,.0f}'):
         textcoords="offset points",
         ha='center', va='bottom')       
 
-def show_itable(df, order=[[0, 'asc']], dom=ITABLE_DOM_SHORT, title=''):
-    with pd.option_context("display.float_format", "{:,.0f}".format):
-        return show(df.astype('float64',errors='ignore'), order=order, paging=(True if dom == ITABLE_DOM_LONG else False), dom=dom, tags=get_table_title(title))
+def show_itable(df, order=[[0, 'asc']], dom=ITABLE_DOM_SHORT, title='', precision=0, column_formats={}):
+    formatted_df = df.copy()
+    default_number_format = "{{:,.{precision}f}}".format(precision=precision)
+    for column in df.columns:
+        if column in column_formats:
+            formatted_df[column] = df[column].apply(column_formats[column].format)
+        elif df[column].dtype.kind in 'if' and column not in column_formats:
+            formatted_df[column] = df[column].apply(default_number_format.format)
+        
+    return show(formatted_df, order=order, paging=(True if dom == ITABLE_DOM_LONG else False), dom=dom, tags=get_table_title(title))
 
 def show_itable_long(df, order):
     return show_itable(df, order, ITABLE_DOM_LONG)
