@@ -84,8 +84,8 @@ def show_itable(df, order=[[0, 'asc']], dom=ITABLE_DOM_SHORT, title='', precisio
         
     return show(formatted_df, order=order, paging=(True if dom == ITABLE_DOM_LONG else False), dom=dom, tags=get_table_title(title))
 
-def show_itable_long(df, order):
-    return show_itable(df, order, ITABLE_DOM_LONG)
+def show_itable_long(df, order, **args):
+    return show_itable(df, order, ITABLE_DOM_LONG, **args)
 
 def get_page_header():
     get_readable_time = lambda ts: datetime.datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d %H:%M')
