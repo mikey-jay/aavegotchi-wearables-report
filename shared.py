@@ -8,6 +8,7 @@ import json
 from itables import show
 import itables.options
 from IPython.display import Markdown as md
+from charts.grouped_bar_chart import GroupedBarChart
 
 def get_midnight_utc_today():
     utc_now_struct = time.gmtime()
@@ -99,14 +100,16 @@ def get_time_intervals(start, end, step):
         yield start
         start += step
 
-get_rarity_color = lambda rarity: {
+rarity_color_mappings = {
     'common': 'mediumslateblue',
     'uncommon': 'darkturquoise',
     'rare': 'deepskyblue',
     'legendary': 'orange',
     'mythical': 'hotpink',
     'godlike': 'mediumspringgreen'
-}[rarity]
+}
+
+get_rarity_color = lambda rarity: rarity_color_mappings[rarity]
 
 def get_first_day_of_week(d):
     weekday = d.isocalendar().weekday - 1
