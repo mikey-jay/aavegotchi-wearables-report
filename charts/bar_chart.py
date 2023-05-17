@@ -31,13 +31,27 @@ class BarChartDataManager:
         self._aggregator = aggregator
 
     def get_categories(self) -> List[BarChartCategory]:
+        aggregated_df = self._get_aggregated_dataframe()
         categories = []
-        category_names = self._get_values_for_column_unique(self._category_column_name)
-        for category_name in category_names:
-            category_values = self._df[self._df[self._category_column_name] == category_name][self._values_column_name]
-            aggregated_values = self._aggregator(category_values) if self._aggregator is not None else category_values
+        for category_name, aggregated_values in list(zip(aggregated_df[self._category_column_name], aggregated_df[self._values_column_name])):
             categories.append(BarChartCategory(category_name, aggregated_values))
         return categories
+
+    def _get_aggregated_dataframe(self, df: pd.DataFrame=None, group_by_column_name: str=None, values_column_name: str=None, aggregator=None) -> BarChartCategoryGroup:
+        if df is None:
+            df = self._df
+        if group_by_column_name is None:
+            group_by_column_name = self._category_column_name
+        if values_column_name is None:
+            values_column_name = self._values_column_name
+        if aggregator is None:
+            aggregator = self._aggregator
+        aggregated_groups = df[group_by_column_name].unique()
+        aggregated_values = []
+        for group in aggregated_groups:
+            aggregated_values.append(aggregator(df[df[group_by_column_name] == group][values_column_name]))
+        aggregated_df = pd.DataFrame({ group_by_column_name: aggregated_groups, values_column_name: aggregated_values })
+        return aggregated_df
 
     def _get_values_for_column(self, column_name) -> pd.Series:
         return self._df[column_name]
