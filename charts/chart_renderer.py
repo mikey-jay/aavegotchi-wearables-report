@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class ChartRenderer:
-    def __init__(self, chart_collection, chart_type='grouped', colors=None, sort_func=None):
+    def __init__(self, chart_collection, chart_type='grouped_bar', colors=None, sort_func=None):
         self._charts = chart_collection
         self.bar_width = 0.8
         self.chart_type = chart_type
@@ -14,11 +14,11 @@ class ChartRenderer:
         names = []
         values = []
         labels = []
-        for group in chart.get_groups():
-            for bar in group.get_bars():
+        for series in chart.get_series():
+            for bar in series.get_bars():
                 names.append(bar.get_name())
                 values.append(bar.get_value())
-                labels.append(group.get_name())
+                labels.append(series.get_name())
         return names, values, labels
 
     def _plot_grouped_bars(self, ax, names, values, labels, color_mapping):
@@ -47,26 +47,27 @@ class ChartRenderer:
         return [cmap(i) for i in np.linspace(0, 0.8, count)]
 
     def render(self):
-        fig, axs = plt.subplots(len(self._charts.get_charts()), figsize=(10, 5))
+        num_charts = len(self._charts.get_charts())
+        fig, axs = plt.subplots(num_charts, figsize=(12, 6 * num_charts))
         if len(self._charts.get_charts()) == 1:
             axs = [axs]
         for i, chart in enumerate(self._charts.get_charts()):
             ax = axs[i]
             names, values, labels = self._get_data_to_plot(chart)
-            group_count = len(set(labels))
+            series_count = len(set(labels))
             if self.colors is None:
-                chart_colors = self._get_default_colors(group_count)
+                chart_colors = self._get_default_colors(series_count)
             else:
                 chart_colors = self.colors
             color_mapping = {label: color for label, color in zip(sorted(list(set(labels))), chart_colors)}
-            if self.chart_type == "grouped":
+            if self.chart_type == "grouped_bar":
                 self._plot_grouped_bars(ax, names, values, labels, color_mapping)
-            elif self.chart_type == "stacked":
+            elif self.chart_type == "stacked_bar":
                 self._plot_stacked_bars(ax, names, values, labels, color_mapping)
             ax.set_xticks(np.arange(len(set(names))))
             ax.set_xticklabels(sorted(list(set(names))))
             ax.set_title(chart.get_name())
-            if group_count > 1:
+            if series_count > 1:
                 ax.legend()
         plt.tight_layout()
         plt.show()

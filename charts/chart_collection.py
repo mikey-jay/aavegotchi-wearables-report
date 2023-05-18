@@ -13,7 +13,7 @@ class Bar:
     def get_value(self):
         return self._value
 
-class BarGroup:
+class BarSeries:
     def __init__(self, name):
         self._name = name
         self._bars = []
@@ -30,16 +30,16 @@ class BarGroup:
 class BarChart:
     def __init__(self, name):
         self._name = name
-        self._groups = []
+        self._series = []
 
-    def add_group(self, group: BarGroup):
-        self._groups.append(group)
+    def add_series(self, series: BarSeries):
+        self._series.append(series)
 
     def get_name(self):
         return self._name
 
-    def get_groups(self):
-        return self._groups
+    def get_series(self):
+        return self._series
 
 class ChartCollection:
     def __init__(self, name):
@@ -56,73 +56,61 @@ class ChartCollection:
         return self._charts
     
 class ChartBuilder:
-    def __init__(self, df, category_column_name=None, values_column_name=None, group_by_column_name=None, agg_func=np.sum):
+    def __init__(self, df, category_column_name=None, values_column_name=None, series_column_name=None, agg_func=np.sum):
         self._df = df
-        self._group_by_column_name = group_by_column_name
+        self._series_column_name = series_column_name
         self._category_column_name = category_column_name
         self._values_column_name = values_column_name
         self._agg_func = agg_func
 
     def build_chart(self, chart_name):
         # aggregate the data
-        group_by_columns = [self._category_column_name]
+        series_columns = [self._category_column_name]
 
-        if self._group_by_column_name:
-            group_by_columns.append(self._group_by_column_name)
+        if self._series_column_name:
+            series_columns.append(self._series_column_name)
             
-        aggregated_df = self._df.groupby(group_by_columns).agg({self._values_column_name: self._agg_func}).reset_index()
+        aggregated_df = self._df.groupby(series_columns).agg({self._values_column_name: self._agg_func}).reset_index()
 
         chart = BarChart(chart_name)
 
-        # If no group_by_column_name is provided, create one group for all bars
-        if self._group_by_column_name is None:
-            group = BarGroup("Default")
-            chart.add_group(group)
+        # If no series_column_name is provided, create one series for all bars
+        if self._series_column_name is None:
+            series = BarSeries("Default")
+            chart.add_series(series)
             for index, row in aggregated_df.iterrows():
                 bar_name = row[self._category_column_name]
                 bar_value = row[self._values_column_name]
                 bar = Bar(bar_name, bar_value)
-                group.add_bar(bar)
+                series.add_bar(bar)
 
         else:
             for index, row in aggregated_df.iterrows():
-                group_name = row[self._group_by_column_name]
+                series_name = row[self._series_column_name]
                 bar_name = row[self._category_column_name]
                 bar_value = row[self._values_column_name]
                 bar = Bar(bar_name, bar_value)
 
-                # Check if group already exists
-                group = next((g for g in chart.get_groups() if g.get_name() == group_name), None)
-                if group is None:
-                    # Create new group if it doesn't exist
-                    group = BarGroup(group_name)
-                    chart.add_group(group)
+                # Check if series already exists
+                series = next((g for g in chart.get_series() if g.get_name() == series_name), None)
+                if series is None:
+                    # Create new series if it doesn't exist
+                    series = BarSeries(series_name)
+                    chart.add_series(series)
 
-                group.add_bar(bar)
+                series.add_bar(bar)
         
         return chart
 
 if __name__ == '__main__':
     charts = ChartCollection('Test Charts')
-    sample_df = pd.DataFrame({'x': ['1', '2', '3', '4', '5', '1', '2', '3', '4', '5'], 'y': [0.1, 0.2, 0.3, 0.4, 0.5, 0.4, 0.3, 0.2, 0.1, 0.0], 'group': ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B']})
-    simple_chart = ChartBuilder(sample_df, category_column_name='x', values_column_name='y', group_by_column_name=None).build_chart('Simple Chart')
-    grouped_chart = ChartBuilder(sample_df, category_column_name='x', values_column_name='y', group_by_column_name='group').build_chart('Grouped Chart')
-
-    def print_chart(chart: BarChart):
-        print(f'Chart: {chart.get_name()}')
-        for group in chart.get_groups():
-            group_name = group.get_name()
-            for bar in group.get_bars():
-                bar_name = bar.get_name()
-                bar_value = bar.get_value()
-                print(f'{group_name} - {bar_name} - {bar_value}')
-
-    print_chart(simple_chart)
-    print_chart(grouped_chart)
+    sample_df = pd.DataFrame({'x': ['1', '2', '3', '4', '5', '1', '2', '3', '4', '5'], 'y': [0.1, 0.2, 0.3, 0.4, 0.5, 0.4, 0.3, 0.2, 0.1, 0.0], 'series': ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B']})
+    simple_chart = ChartBuilder(sample_df, category_column_name='x', values_column_name='y', series_column_name=None).build_chart('Simple Chart')
+    grouped_chart = ChartBuilder(sample_df, category_column_name='x', values_column_name='y', series_column_name='series').build_chart('Grouped Chart')
 
     charts.add_chart(simple_chart)
     charts.add_chart(grouped_chart)
 
     from chart_renderer import ChartRenderer
-    renderer = ChartRenderer(charts, chart_type='grouped')
+    renderer = ChartRenderer(charts, chart_type='grouped_bar')
     renderer.render()
