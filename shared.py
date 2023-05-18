@@ -9,6 +9,8 @@ from itables import show
 import itables.options
 from IPython.display import Markdown as md
 from charts.grouped_bar_chart import GroupedBarChart
+from charts.chart_collection import ChartCollection, ChartBuilder
+from charts.chart_renderer import ChartRenderer
 
 def get_midnight_utc_today():
     utc_now_struct = time.gmtime()
@@ -197,7 +199,11 @@ def get_wearable_types_df():
     getTraitEffect = lambda s: pd.Series(s).apply(lambda modifier: '+' if modifier > 0 else '-' if modifier < 0 else '')
     wearable_types_df[TRAIT_NAMES] = wearable_types_df['traitModifiers'].apply(pd.Series)
     wearable_types_df[traitEffectColumns] = wearable_types_df['traitModifiers'].apply(getTraitEffect)
-    wearable_types_df.drop(['traitModifiers', 'EYS', 'EYC', 'EYS Effect', 'EYC Effect'], axis=1, inplace=True)
+
+    for trait in TRAIT_NAMES:
+        wearable_types_df[f'{trait} Supply'] = wearable_types_df[trait] * wearable_types_df['maxQuantity']
+
+    wearable_types_df.drop(['traitModifiers', 'EYS', 'EYC', 'EYS Effect', 'EYC Effect', 'EYS Supply', 'EYC Supply'], axis=1, inplace=True)
 
     # slot positions
     def get_slot_name_if_true(t):
