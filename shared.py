@@ -217,6 +217,9 @@ def get_wearable_types_df():
     for trait in TRAIT_NAMES:
         wearable_types_df[f'{trait} Supply'] = wearable_types_df[trait] * wearable_types_df['maxQuantity']
 
+    wearable_types_df['bestFitRarityScoreModifier'] =  wearable_types_df[["rarityScoreModifier"] + TRAIT_NAMES[0:4]].abs().sum(axis=1)
+    wearable_types_df['traitModifierCount'] = wearable_types_df['traitModifiers'].apply(lambda row: len(list(filter(lambda x: x != 0, row))))
+
     wearable_types_df.drop(['traitModifiers', 'EYS', 'EYC', 'EYS Effect', 'EYC Effect', 'EYS Supply', 'EYC Supply'], axis=1, inplace=True)
 
     # slot positions
