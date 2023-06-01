@@ -11,6 +11,7 @@ from IPython.display import Markdown as md
 from charts.grouped_bar_chart import GroupedBarChart
 from charts.chart_collection import ChartCollection, ChartBuilder
 from charts.chart_renderer import ChartRenderer
+from utils.import_item_types_csv import import_item_types_csv
 
 def get_midnight_utc_today():
     utc_now_struct = time.gmtime()
@@ -187,8 +188,21 @@ def get_wearable_types_df():
     )
 
     wearables_result = wearables_query.execute(USE_CACHE)
-    wearable_types_df = get_subgraph_result_df(wearables_result)
-    wearable_types_df.set_index(wearable_types_df.index.astype(np.int64), inplace=True)
+
+    # temporarily patch the results to include the latest wearable types - due to bug with core matic subgraph
+    # uncomment these two lines and delete the patch below when the core matic subgraph is fixed to include forge wearables
+
+    # wearable_types_df = get_subgraph_result_df(wearables_result)
+    # wearable_types_df.set_index(wearable_types_df.index.astype(np.int64), inplace=True)
+
+    wearable_types_from_subgraph_df = get_subgraph_result_df(wearables_result)
+    wearable_types_from_subgraph_df.set_index(wearable_types_from_subgraph_df.index.astype(np.int64), inplace=True)
+    forge_wearable_types_df = import_item_types_csv('data/forge_wearable_types.csv')
+    missing_wearable_types = forge_wearable_types_df[~forge_wearable_types_df.index.isin(wearable_types_from_subgraph_df.index)]
+    wearable_types_df = pd.concat([wearable_types_from_subgraph_df, missing_wearable_types])
+    
+    # end of patch
+
     wearable_types_df.sort_index(inplace=True)
     item_types_int_fields = ['maxQuantity', 'rarityScoreModifier']
     wearable_types_df[item_types_int_fields] = wearable_types_df[item_types_int_fields].astype(np.int64)
