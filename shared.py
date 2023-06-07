@@ -256,7 +256,7 @@ def get_gotchis_wearables_df(block):
     has_wearables = list(map(any, gotchis_wearables_df['equippedWearables'].to_list()))
     return gotchis_wearables_df[has_wearables]
 
-def get_wearable_equipped_df(block, gotchis_df, types_df):
+def get_wearable_equipped_df(gotchis_df, types_df):
     #gotchis_df = get_gotchis_wearables_df(block)
     #types_df = get_wearable_types_df()
     has_wearable_equipped = lambda id: list(map(lambda w: id in w, gotchis_df['equippedWearables'].to_list()))
