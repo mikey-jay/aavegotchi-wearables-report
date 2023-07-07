@@ -57,6 +57,7 @@ plt.style.use('seaborn-whitegrid')
 itables.options.paging = False
 itables.options.columnDefs = [{"className": "dt-left", "targets": [0]}]
 itables.options.dom = ITABLE_DOM_SHORT
+itables.options.maxBytes = 0 # disable itable size limit
 
 # bar charts
 def get_bar_charts(df, category, metrics, colors):
@@ -88,7 +89,7 @@ def show_itable(df, order=[[0, 'asc']], dom=ITABLE_DOM_SHORT, title='', precisio
         
     return show(formatted_df, order=order, paging=(True if dom == ITABLE_DOM_LONG else False), dom=dom, tags=get_table_title(title))
 
-def show_itable_long(df, order, **args):
+def show_itable_long(df, order=[[0, 'asc']], **args):
     return show_itable(df, order, ITABLE_DOM_LONG, **args)
 
 def get_page_header():
