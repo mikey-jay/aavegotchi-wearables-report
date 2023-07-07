@@ -59,6 +59,8 @@ itables.options.columnDefs = [{"className": "dt-left", "targets": [0]}]
 itables.options.dom = ITABLE_DOM_SHORT
 itables.options.maxBytes = 0 # disable itable size limit
 
+get_rarity_sort_value = lambda rarity: list(RARITY_SCORE_MODIFIERS.values()).index(rarity)
+
 # bar charts
 def get_bar_charts(df, category, metrics, colors):
     fig, axes = plt.subplots(len(metrics))
