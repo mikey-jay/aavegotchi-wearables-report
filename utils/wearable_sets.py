@@ -12,16 +12,8 @@ def import_wearable_sets_csv(csv_filename):
     return wearable_sets_df
 
 def get_wearable_sets_df(wearable_types_df):
-    ''' wearable sets have many issues in subgraph, keeping it in a CSV for now
-    wearable_sets_query = get_core_matic_query(
-    { 'wearableSets': {
-        'params': { 'where': { 'id_not': UPDATE_TIME_HASH } },
-        'fields': ["id", "name", "traitBonuses", "wearableIds", "allowedCollaterals"] }}
-    )
+    # wearable sets have many issues in subgraph, keeping it in a CSV for now - this will need to be updated manually
 
-    wearable_sets_result = wearable_sets_query.execute(USE_CACHE)
-    wearable_sets_df = get_subgraph_result_df(wearable_sets_result)
-    '''
     wearable_sets_df = import_wearable_sets_csv('data/wearable_sets.csv')
 
     # split trait modifiers into individual columns
