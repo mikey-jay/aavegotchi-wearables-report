@@ -134,35 +134,6 @@ def get_wearable_purchases_df():
         purchases_result += purchases_query.execute(USE_CACHE)
     purchases_df = get_subgraph_result_df(purchases_result)
 
-    """
-    local_db_file = 'data/wearable_purchases.csv'
-
-    db_exists = os.path.exists(local_db_file)
-    last_db_purchase_time = 0
-
-    if db_exists:
-        db_modified_time = os.path.getmtime(os.path.abspath(local_db_file))
-        db_expired = db_modified_time <= UPDATE_TIME
-        purchases_df = pd.read_csv(local_db_file, index_col='id').fillna('')
-        last_db_purchase_time = round(purchases_df['timeLastPurchased'].astype(np.int64).max())
-    else:
-        db_expired = True
-        purchases_df = pd.DataFrame()
-
-    if db_expired:
-        purchases_result = []
-        for interval_start in get_time_intervals(max(START_TIME, last_db_purchase_time + 1), END_TIME, QUERY_TIME_INTERVAL):
-            interval_end = min(interval_start + QUERY_TIME_INTERVAL, END_TIME)
-            purchases_query = get_core_matic_query(
-                { 'erc1155Purchases': {
-                    'params': { 'where': { 'category': ITEM_TYPE_CATEGORY_WEARABLE, 'timeLastPurchased_lt': interval_end, 'timeLastPurchased_gte': interval_start } },
-                    'fields': ["id", "listingID", "erc1155TypeId", "priceInWei", "quantity", "timeLastPurchased"] }}
-            )
-            purchases_result += purchases_query.execute(USE_CACHE)
-        purchases_df = pd.concat([purchases_df, get_subgraph_result_df(purchases_result)])
-        purchases_df.to_csv(local_db_file)
-    """
-
     # data types
     purchases_int_fields = ['listingID', 'erc1155TypeId', 'quantity', 'timeLastPurchased']
     purchases_df[purchases_int_fields] = purchases_df[purchases_int_fields].astype(np.int64)
@@ -260,8 +231,6 @@ def get_gotchis_wearables_df(block):
     return gotchis_wearables_df[has_wearables]
 
 def get_wearable_equipped_df(gotchis_df, types_df):
-    #gotchis_df = get_gotchis_wearables_df(block)
-    #types_df = get_wearable_types_df()
     has_wearable_equipped = lambda id: list(map(lambda w: id in w, gotchis_df['equippedWearables'].to_list()))
     get_wearable_equipped_count = lambda id: sum(has_wearable_equipped(id))
     get_unique_owner_count = lambda id: gotchis_df[has_wearable_equipped(id)]['owner.id'].nunique()
