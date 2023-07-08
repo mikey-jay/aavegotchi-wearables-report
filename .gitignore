@@ -3,6 +3,8 @@ db/*.csv
 db/*.sh
 db/*.db
 
+.DS_store
+
 # vcr cassettes
 subgraph/cache.yaml
 

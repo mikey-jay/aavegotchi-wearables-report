@@ -1,0 +1,246 @@
+id,name,maxQuantity,rarityScoreModifier,NRG,AGG,SPK,BRN,NRG Effect,AGG Effect,SPK Effect,BRN Effect,slotNames,rarity
+1,Camo Hat,1000,1,0,1,0,0,,+,,,Head,common
+2,Camo Pants,1000,1,0,1,0,0,,+,,,Body,common
+3,MK2 Grenade,1000,1,0,1,0,0,,+,,,"Hand L, Hand R",common
+4,Snow Camo Hat,500,2,0,1,1,0,,+,+,,Head,uncommon
+5,Snow Camo Pants,500,2,0,1,1,0,,+,+,,Body,uncommon
+6,M67 Grenade,500,2,0,2,0,0,,+,,,"Hand L, Hand R",uncommon
+7,Marine Cap,300,5,0,2,0,1,,+,,+,Head,rare
+8,Marine Jacket,300,5,0,2,0,1,,+,,+,Body,rare
+9,Walkie Talkie,300,5,1,0,1,1,+,,+,+,"Hand L, Hand R",rare
+10,Link White Hat,150,10,0,2,0,2,,+,,+,Head,legendary
+11,Link Mess Dress,150,10,0,2,0,2,,+,,+,Body,legendary
+12,Link Bubbly,150,10,2,0,0,-2,+,,,-,"Hand L, Hand R",legendary
+13,Sergey Beard,50,20,-1,1,0,3,-,+,,+,Face,mythical
+14,Sergey Eyes,50,20,0,0,1,4,,,+,+,Eyes,mythical
+15,Red Plaid,50,20,3,2,0,0,+,+,,,Body,mythical
+16,Blue Plaid,5,50,-4,-2,0,0,-,-,,,Body,godlike
+17,Link Cube,5,50,0,0,0,6,,,,+,"Hand L, Hand R",godlike
+18,Aave Hero Mask,1000,1,0,0,1,0,,,+,,Face,common
+19,Aave Hero Shirt,1000,1,0,0,1,0,,,+,,Body,common
+20,Aave Plush,1000,1,0,0,1,0,,,+,,"Hand L, Hand R",common
+21,Captain Aave Mask,500,2,1,0,1,0,+,,+,,Head,uncommon
+22,Captain Aave Suit,500,2,1,0,1,0,+,,+,,Body,uncommon
+23,Captain Aave Shield,500,2,2,0,0,0,+,,,,"Hand L, Hand R",uncommon
+24,Thaave Helmet,250,5,2,0,1,0,+,,+,,Head,rare
+25,Thaave Suit,250,5,2,0,1,0,+,,+,,Body,rare
+26,Thaave Hammer,250,5,3,0,0,1,+,,,+,"Hand L, Hand R",rare
+27,Marc Hair,100,10,2,2,0,0,+,+,,,Head,legendary
+28,Marc Outfit,100,10,2,2,0,0,+,+,,,Body,legendary
+29,REKT Sign,100,10,0,0,0,-4,,,,-,Hand L,legendary
+30,Jordan Hair,50,20,0,-2,3,0,,-,+,,Head,mythical
+31,Jordan Suit,50,20,-3,0,1,1,-,,+,+,Body,mythical
+32,Aave Flag,50,20,0,-2,3,0,,-,+,,"Hand L, Hand R",mythical
+33,Stani Hair,5,50,0,-3,0,3,,-,,+,Head,godlike
+34,Stani Vest,5,50,3,-3,0,0,+,-,,,Body,godlike
+35,Aave Boat,5,50,0,-6,0,0,,-,,,Pet,godlike
+36,ETH Logo Glasses,1000,1,0,0,0,-1,,,,-,Eyes,common
+37,ETH Tshirt,1000,1,0,0,0,-1,,,,-,Body,common
+38,32 ETH Coin,1000,1,0,0,0,-1,,,,-,Hand L,common
+39,Foxy Mask,500,2,0,-2,0,0,,-,,,Head,uncommon
+40,Foxy Tail,500,2,0,-1,-1,0,,-,-,,Pet,uncommon
+41,Trezor Wallet,500,2,-1,-1,0,0,-,-,,,"Hand L, Hand R",uncommon
+42,Eagle Mask,250,5,1,0,2,0,+,,+,,Head,rare
+43,Eagle Armor,250,5,2,0,1,0,+,,+,,Body,rare
+44,DAO Egg,250,5,1,0,0,2,+,,,+,Hand L,rare
+45,Ape Mask,100,10,0,1,0,-3,,+,,-,Head,legendary
+46,Halfrekt Shirt,100,10,1,1,0,-2,+,+,,-,Body,legendary
+47,Waifu Pillow,100,10,0,0,0,-4,,,,-,"Hand L, Hand R",legendary
+48,Xibot Mohawk,50,20,5,0,0,0,+,,,,Head,mythical
+49,Coderdan Shades,50,20,0,5,0,0,,+,,,Eyes,mythical
+50,GldnXross Robe,50,20,0,0,5,0,,,+,,Body,mythical
+51,Mudgen Diamond,50,20,0,0,0,5,,,,+,"Hand L, Hand R",mythical
+52,Galaxy Brain,5,50,0,0,0,6,,,,+,Head,godlike
+53,All-Seeing Eyes,5,50,-6,0,0,0,-,,,,Eyes,godlike
+54,Llamacorn Shirt,5,50,-3,-3,0,0,-,-,,,Body,godlike
+55,Aagent Headset,308,5,0,1,1,1,,+,+,+,Face,rare
+56,Aagent Shirt,308,5,-1,1,1,0,-,+,+,,Body,rare
+57,Aagent Shades,308,5,-1,0,2,0,-,,+,,Eyes,rare
+58,Aagent Pistol,308,5,0,3,0,0,,+,,,"Hand L, Hand R",rare
+59,Aagent Fedora Hat,308,5,-2,0,1,0,-,,+,,Head,rare
+60,Common Wizard Hat,1000,1,0,0,0,1,,,,+,Head,common
+61,Legendary Wizard Hat,125,10,0,0,2,2,,,+,+,Head,legendary
+62,Mythical Wizard Hat,50,20,0,0,2,3,,,+,+,Head,mythical
+63,Godlike Wizard Hat,5,50,0,0,2,4,,,+,+,Head,godlike
+64,Common Wizard Staff,1000,1,1,0,0,0,+,,,,"Hand L, Hand R",common
+65,Legendary Wizard Staff,125,10,2,0,0,2,+,,,+,"Hand L, Hand R",legendary
+66,Wizard Visor,1000,1,1,0,0,0,+,,,,Eyes,common
+67,Straw Hat,1000,1,-1,0,0,0,-,,,,Head,common
+68,Farmer Jeans,1000,1,0,0,0,-1,,,,-,Body,common
+69,Pitchfork,1000,1,0,1,0,0,,+,,,"Hand L, Hand R",common
+70,Handsaw,50,20,0,3,0,-2,,+,,-,"Hand L, Hand R",mythical
+71,Red Santa Hat,389,5,0,-1,-2,0,,-,-,,Head,rare
+72,Jaay Hairpiece,30,20,0,0,0,-5,,,,-,Head,mythical
+73,Jaay Glasses,10,20,-2,-2,0,-1,-,-,,-,Eyes,mythical
+74,Jaay Suit,20,20,-2,0,0,-3,-,,,-,Body,mythical
+75,OKex Sign,40,20,-5,0,0,0,-,,,,"Hand L, Hand R",mythical
+76,Big GHST Token,1000,1,0,0,0,1,,,,+,Hand L,common
+77,Bitcoin Beanie,500,2,1,0,0,-1,+,,,-,Head,uncommon
+78,Black Jeans,500,2,0,1,0,-1,,+,,-,Body,uncommon
+79,Skateboard,250,5,1,0,0,-2,+,,,-,"Hand L, Hand R",rare
+80,Sushi Bandana,250,5,-1,2,0,0,-,+,,,Head,rare
+81,Sushi Coat,250,5,-2,1,0,0,-,+,,,Body,rare
+82,Sushi Piece,125,10,0,0,-4,0,,,-,,"Hand L, Hand R",legendary
+83,Sushi Knife,250,5,0,3,0,0,,+,,,"Hand L, Hand R",rare
+84,Gentleman Hat,125,10,-1,-3,0,0,-,-,,,Head,legendary
+85,Gentleman Coat,125,10,-1,-3,0,0,-,-,,,Body,legendary
+86,Monocle,50,20,0,-2,0,3,,-,,+,Eyes,mythical
+87,Miner Helmet,500,2,1,0,0,-1,+,,,-,Head,uncommon
+88,Miner Jeans,500,2,1,0,0,-1,+,,,-,Body,uncommon
+89,Pickaxe,250,5,1,2,0,0,+,+,,,"Hand L, Hand R",rare
+90,Pajama Hat,1000,1,0,0,-1,0,,,-,,Head,common
+91,Pajama Shirt,500,2,0,-1,-1,0,,-,-,,Body,uncommon
+92,Bedtime Milk,250,5,0,-2,-1,0,,-,-,,"Hand L, Hand R",rare
+93,Fluffy Pillow,125,10,0,0,-4,0,,,-,,"Hand L, Hand R",legendary
+94,Sweatband,500,2,2,0,0,0,+,,,,Head,uncommon
+95,Track Shorts,500,2,1,0,0,-1,+,,,-,Body,uncommon
+96,Water bottle,500,2,2,0,0,0,+,,,,"Hand L, Hand R",uncommon
+97,Pillbox Hat,125,10,1,-1,-2,0,+,-,-,,Head,legendary
+98,Day Dress,125,10,1,-1,-2,0,+,-,-,,Body,legendary
+99,Parasol,50,20,1,-1,-3,0,+,-,-,,"Hand L, Hand R",mythical
+100,Clutch,125,10,1,-2,-2,0,+,-,-,,"Hand L, Hand R",legendary
+101,Witchy Hat,125,10,0,1,3,0,,+,+,,Head,legendary
+102,Witchy Cloak,125,10,0,1,3,0,,+,+,,Body,legendary
+103,Witchy Wand,50,20,0,2,2,1,,+,+,+,"Hand L, Hand R",mythical
+104,Portal Mage Helmet,125,10,2,1,1,0,+,+,+,,Head,legendary
+105,Portal Mage Armor,125,10,1,2,2,0,+,+,+,,Body,legendary
+106,Portal Mage Axe,125,10,0,4,0,0,,+,,,"Hand L, Hand R",legendary
+107,Portal Mage Black Axe,5,50,0,6,0,0,,+,,,"Hand L, Hand R",godlike
+108,Rasta Hat,500,2,-1,-1,0,0,-,-,,,Head,uncommon
+109,Rasta Shirt,500,2,-1,-1,0,0,-,-,,,Body,uncommon
+110,Jamaican Flag,250,5,-1,-2,0,0,-,-,,,"Hand L, Hand R",rare
+111,Hazmat Hood,125,10,1,-1,2,0,+,-,+,,Head,legendary
+112,Hazmat Suit,125,10,2,-1,1,0,+,-,+,,Body,legendary
+113,Uranium Rod,5,50,6,0,0,0,+,,,,"Hand L, Hand R",godlike
+114,Red Hawaiian Shirt,50,20,-3,-2,0,0,-,-,,,Body,mythical
+115,Blue Hawaiian Shirt,125,10,-2,-2,0,0,-,-,,,Body,legendary
+116,Coconut,250,5,0,0,-3,0,,,-,,"Hand L, Hand R",rare
+117,Cool shades,1000,1,0,0,0,-1,,,,-,Eyes,common
+118,Water Jug,125,10,2,0,0,2,+,,,+,"Hand L, Hand R",legendary
+119,Baby Bottle,125,10,0,-1,-3,0,,-,-,,"Hand L, Hand R",legendary
+120,Martini,125,10,-1,0,0,-3,-,,,-,"Hand L, Hand R",legendary
+121,Wine,250,5,0,0,0,-3,,,,-,"Hand L, Hand R",rare
+122,Milkshake,50,20,0,0,-5,0,,,-,,"Hand L, Hand R",mythical
+123,Apple Juice,500,2,0,0,-2,0,,,-,,"Hand L, Hand R",uncommon
+124,Beer Helmet,50,20,0,0,0,-5,,,,-,Head,mythical
+125,Track Suit,125,10,2,2,0,0,+,+,,,Body,legendary
+130,Fireball,1000,1,0,1,0,0,,+,,,"Hand L, Hand R",common
+131,Dragon Horns,500,2,0,1,1,0,,+,+,,Head,uncommon
+132,Dragon Wings,250,5,0,2,1,0,,+,+,,Body,rare
+133,Pointy Horns,100,10,0,2,2,0,,+,+,,Head,legendary
+134,L2 Sign,1000,1,0,0,0,1,,,,+,"Hand L, Hand R",common
+135,Polygon Shirt,500,2,0,0,0,2,,,,+,Body,uncommon
+136,Polygon Cap,250,5,0,-1,0,2,,-,,+,Head,rare
+137,Vote Sign,1000,1,0,-1,0,0,,-,,,"Hand L, Hand R",common
+138,Snapshot Shirt,500,2,0,-2,0,0,,-,,,Body,uncommon
+139,Snapshot Cap,250,5,0,-3,0,0,,-,,,Head,rare
+140,Elf Ears,1000,1,0,0,-1,0,,,-,,Face,common
+141,Gemstone Ring,500,2,0,0,-1,1,,,-,+,"Hand L, Hand R",uncommon
+142,Princess Tiara,250,5,0,0,-2,1,,,-,+,Head,rare
+143,Gold Necklace,100,10,2,2,0,0,+,+,,,Body,legendary
+144,Princess Hair,50,20,0,0,-3,2,,,-,+,Head,mythical
+145,Godli Locks,5,50,0,0,-4,2,,,-,+,Head,godlike
+146,Imperial Moustache,1000,1,-1,0,0,0,-,,,,Face,common
+147,Tiny Crown,500,2,-1,0,0,-1,-,,,-,Head,uncommon
+148,Royal Scepter,250,5,-2,0,0,-1,-,,,-,"Hand L, Hand R",rare
+149,Royal Crown,100,10,-2,0,0,-2,-,,,-,Head,legendary
+150,Royal Robes,50,20,-3,0,0,-2,-,,,-,Body,mythical
+151,Common Rofl,1000,1,0,0,0,-1,,,,-,Pet,common
+152,Uncommon Rofl,500,2,-1,0,0,-1,-,,,-,Pet,uncommon
+153,Rare Rofl,250,5,-1,0,0,-2,-,,,-,Pet,rare
+154,Legendary Rofl,100,10,-2,0,0,-2,-,,,-,Pet,legendary
+155,Mythical Rofl,50,20,-2,0,0,-3,-,,,-,Pet,mythical
+156,Godlike Rofl,5,50,-3,0,0,-3,-,,,-,Pet,godlike
+157,Lil Pump Goatee,500,2,1,1,0,0,+,+,,,Face,uncommon
+158,Lil Pump Drank,250,5,1,2,0,0,+,+,,,"Hand L, Hand R",rare
+159,Lil Pump Shades,100,10,0,3,1,0,,+,+,,Eyes,legendary
+160,Lil Pump Threads,50,20,5,0,0,0,+,,,,Body,mythical
+161,Lil Pump Dreads,5,50,4,2,0,0,+,+,,,Head,godlike
+199,Steampunk Goggles,250,5,0,0,3,0,,,+,,Eyes,rare
+200,Steampunk Trousers,500,2,0,0,2,0,,,+,,Body,uncommon
+201,Mechanical Claw,100,10,0,2,2,0,,+,+,,"Hand L, Hand R",legendary
+202,VR Headset,50,20,2,3,0,0,+,+,,,Eyes,mythical
+203,Gamer Jacket,250,5,1,2,0,0,+,+,,,Body,rare
+204,Game Controller,500,2,1,1,0,0,+,+,,,"Hand L, Hand R",uncommon
+205,Gotchi Mug,1000,1,1,0,0,0,+,,,,"Hand L, Hand R",common
+206,Biker Helmet,250,5,0,2,0,1,,+,,+,Head,rare
+207,Biker Jacket,500,2,0,2,0,0,,+,,,Body,uncommon
+208,Aviators,500,2,0,0,2,0,,,+,,Eyes,uncommon
+209,Horseshoe Mustache,100,10,-2,0,2,0,-,,+,,Face,legendary
+211,Guy Fawkes Mask,1000,1,0,0,1,0,,,+,,Head,common
+212,1337 Laptop,50,20,-2,0,0,3,-,,,+,"Hand L, Hand R",mythical
+213,H4xx0r Shirt,100,10,-4,0,0,0,-,,,,Body,legendary
+214,Matrix Eyes,5,50,-3,-3,0,0,-,-,,,Eyes,godlike
+215,Cyborg Eye,100,10,2,2,0,0,+,+,,,Eyes,legendary
+216,Rainbow Vomit,50,20,0,0,-5,0,,,-,,Face,mythical
+217,Energy Gun,50,20,2,3,0,0,+,+,,,"Hand L, Hand R",mythical
+218,Mohawk,500,2,1,1,0,0,+,+,,,Head,uncommon
+219,Mutton Chops,250,5,0,0,2,-1,,,+,-,Face,rare
+220,Punk Shirt,100,10,1,3,0,0,+,+,,,Body,legendary
+221,Pirate Hat,1000,1,0,0,0,-1,,,,-,Head,common
+222,Pirate Coat,500,2,0,0,1,-1,,,+,-,Body,uncommon
+223,Hook Hand,500,2,0,0,1,-1,,,+,-,"Hand L, Hand R",uncommon
+224,Pirate Patch,250,5,0,0,2,-1,,,+,-,Eyes,rare
+225,Basketball,1000,1,1,0,0,0,+,,,,"Hand L, Hand R",common
+226,Red Headband,250,5,2,-1,0,0,+,-,,,Head,rare
+227,23 Jersey,250,5,1,-2,0,0,+,-,,,Body,rare
+228,10 Gallon Hat,1000,1,0,0,0,1,,,,+,Head,common
+229,Lasso,500,2,0,1,0,1,,+,,+,"Hand L, Hand R",uncommon
+230,Wraangler Jeans,1000,1,0,1,0,0,,+,,,Body,common
+231,Comfy Poncho,500,2,-2,0,0,0,-,,,,Body,uncommon
+232,Poncho Hoodie,1000,1,-1,0,0,0,-,,,,Head,common
+233,Uncommon Cacti,500,2,0,0,-1,1,,,-,+,Pet,uncommon
+234,Shaaman Poncho,50,20,-5,0,0,0,-,,,,Body,mythical
+235,Shaaman Hoodie,100,10,-4,0,0,0,-,,,,Head,legendary
+236,Rare Cacti,250,5,0,0,-1,2,,,-,+,Pet,rare
+237,Mythical Cacti,50,20,0,0,-2,3,,,-,+,Pet,mythical
+238,Godlike Cacti,5,50,0,0,-3,3,,,-,+,Pet,godlike
+239,Wagie Cap,500,2,0,-2,0,0,,-,,,Head,uncommon
+240,Headphones,500,2,0,-2,0,0,,-,,,Face,uncommon
+241,WGMI Shirt,250,5,0,-3,0,0,,-,,,Body,rare
+242,Maan Bun,100,10,-2,-2,0,0,-,-,,,Head,legendary
+243,Tinted Shades,250,5,0,-3,0,0,,-,,,Eyes,rare
+244,V-Neck Shirt,250,5,0,-3,0,0,,-,,,Body,rare
+245,Gecko Hat,250,5,0,0,-3,0,,,-,,Head,rare
+246,APY Shades,500,2,1,0,0,1,+,,,+,Eyes,uncommon
+247,Up Arrow,500,2,1,0,0,1,+,,,+,"Hand L, Hand R",uncommon
+248,Up Only Shirt,500,2,1,0,0,1,+,,,+,Body,uncommon
+249,Gecko Eyes,250,5,0,0,-2,-1,,,-,-,Eyes,rare
+250,CoinGecko Tee,250,5,0,0,-2,-1,,,-,-,Body,rare
+251,Candy Jaar,250,5,0,0,-1,-2,,,-,-,"Hand L, Hand R",rare
+252,Aastronaut Helmet,1000,1,0,0,1,0,,,+,,Head,common
+253,Aastronaut Suit,1000,1,0,0,1,0,,,+,,Body,common
+254,uGOTCHI Token,1000,1,0,0,1,0,,,+,,Hand L,common
+255,Space Helmet,100,10,2,-2,0,0,+,-,,,Head,legendary
+256,Lil Bubble Space Suit,100,10,2,-2,0,0,+,-,,,Body,legendary
+257,Bitcoin Guitar,100,10,4,0,0,0,+,,,,"Hand L, Hand R",legendary
+258,Taoist Robe,5,50,-3,0,0,3,-,,,+,Body,godlike
+259,Bushy Eyebrows,5,50,-3,0,0,3,-,,,+,Eyes,godlike
+260,Beard of Wisdom,5,50,-2,0,0,4,-,,,+,Face,godlike
+261,Aantenna Bot,50,20,0,-2,0,3,,-,,+,Pet,mythical
+262,Radar Eyes,50,20,0,-2,0,3,,-,,+,Eyes,mythical
+263,Signal Headset,50,20,0,-2,0,3,,-,,+,Face,mythical
+292,Brunette Ponytail,1000,1,0,-1,0,0,,-,,,Head,common
+293,Leather Tunic,1000,1,-1,0,0,0,-,,,,Body,common
+294,Bow and Arrow,1000,1,0,-1,0,0,,-,,,"Hand L, Hand R",common
+295,Forked Beard,1000,1,0,1,0,0,,+,,,Face,common
+296,Doublesided Axe,500,2,0,1,0,-1,,+,,-,"Hand L, Hand R",uncommon
+297,Animal Skins,500,2,0,2,0,0,,+,,,Body,uncommon
+298,Horned Helmet,1000,1,0,0,0,-1,,,,-,Head,common
+299,Longbow,500,2,0,-1,0,1,,-,,+,"Hand L, Hand R",uncommon
+300,Feathered Cap,500,2,-1,0,-1,0,-,,-,,Head,uncommon
+301,Alluring Eyes,250,5,0,-2,0,1,,-,,+,Eyes,rare
+302,Geisha Headpiece,250,5,-2,-1,0,0,-,-,,,Head,rare
+303,Kimono,250,5,-1,-2,0,0,-,-,,,Body,rare
+304,Paper Fan,250,5,0,-3,0,0,,-,,,"Hand L, Hand R",rare
+305,Sus Butterfly,100,10,0,4,0,0,,+,,,Pet,legendary
+306,Flower Studs,100,10,-2,0,-2,0,-,,-,,Face,legendary
+307,Fairy Wings,100,10,-2,0,-2,0,-,,-,,Body,legendary
+308,Red Hair,100,10,-2,0,-2,0,-,,-,,Head,legendary
+309,Citaadel Helm,50,20,3,-2,0,0,+,-,,,Head,mythical
+310,Plate Armor,50,20,3,-2,0,0,+,-,,,Body,mythical
+311,Spirit Sword,50,20,2,-3,0,0,+,-,,,"Hand L, Hand R",mythical
+312,Plate Shield,50,20,0,-5,0,0,,-,,,"Hand L, Hand R",mythical
+313,Kabuto Helmet,5,50,0,3,3,0,,+,+,,Head,godlike
+314,Yoroi Armor,5,50,0,3,3,0,,+,+,,Body,godlike
+315,Haanzo Katana,5,50,0,2,4,0,,+,+,,"Hand L, Hand R",godlike
