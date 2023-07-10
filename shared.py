@@ -146,7 +146,7 @@ def get_wearable_purchases_df():
     purchases_df['yearMonthPurchased'] = purchases_df['datePurchased'].astype(str).apply(lambda d: d[0:7])
 
     # prices
-    purchases_df['price'] = purchases_df['priceInWei'] / WEI_PER_ETH
+    purchases_df['price'] = (purchases_df['priceInWei'] / WEI_PER_ETH).astype(np.float64)
     purchases_df['totalPrice'] = purchases_df['price'] * purchases_df['quantity']
 
     purchases_df.drop(['timeLastPurchased', 'priceInWei'], axis=1, inplace=True)
