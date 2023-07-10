@@ -1,6 +1,6 @@
 import ast
 import pandas as pd
-from main import get_core_matic_query, get_subgraph_result_df
+from utils.subgraph import get_core_matic_query, get_subgraph_result_df
 from shared import UPDATE_TIME_HASH, TRAIT_NAMES, USE_CACHE, RARITY_SCORE_MODIFIERS
 
 RARITY_SCORE_MODIFIER_NAMES = ["rarityScoreModifier"] + TRAIT_NAMES[0:4]
