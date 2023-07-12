@@ -20,3 +20,5 @@ ITABLE_DOM_LONG = "lftipr"
 ITABLE_DOM_SHORT = "tr"
 GHST_COLOR = 'magenta'
 DEFAULT_COLOR = 'royalBlue'
+FORGE_ALLOY_COST = { 'common': 100, 'uncommon': 300, 'rare': 1300, 'legendary': 5300, 'mythical': 25000, 'godlike': 130000 }
+SMELT_ALLOY_RECEIVED = { 'common': 90, 'uncommon': 270, 'rare': 1170, 'legendary': 4770, 'mythical': 22500, 'godlike': 117000 }

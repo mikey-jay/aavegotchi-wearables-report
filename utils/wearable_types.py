@@ -4,7 +4,18 @@ import pandas as pd
 import numpy as np
 from utils.subgraph import get_core_matic_query, get_subgraph_result_df
 from utils.import_item_types_csv import import_item_types_csv
-from utils.config import ITEM_TYPE_CATEGORY_WEARABLE, UPDATE_TIME_HASH, EXCLUDE_WEARABLE_IDS, USE_CACHE, SLOT_POSITION_NAMES, TRAIT_NAMES, RARITY_SCORE_MODIFIERS, UPDATE_TIME
+from utils.config import (
+    ITEM_TYPE_CATEGORY_WEARABLE,
+    UPDATE_TIME_HASH,
+    EXCLUDE_WEARABLE_IDS,
+    USE_CACHE,
+    SLOT_POSITION_NAMES,
+    TRAIT_NAMES,
+    RARITY_SCORE_MODIFIERS,
+    UPDATE_TIME,
+    FORGE_ALLOY_COST,
+    SMELT_ALLOY_RECEIVED
+)
 
 WEARABLE_TYPES_TABLE_NAME = 'wearable_types'
 
@@ -76,5 +87,9 @@ def get_wearable_types_from_subgraph():
 
     # rarity
     wearable_types_df['rarity'] = wearable_types_df['rarityScoreModifier'].apply(lambda x: RARITY_SCORE_MODIFIERS[x])
+
+    # alloy
+    wearable_types_df['forge_alloy'] = wearable_types_df['rarity'].apply(lambda x: FORGE_ALLOY_COST[x])
+    wearable_types_df['smelt_alloy'] = wearable_types_df['rarity'].apply(lambda x: SMELT_ALLOY_RECEIVED[x])
 
     return wearable_types_df
