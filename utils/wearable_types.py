@@ -92,4 +92,13 @@ def get_wearable_types_from_subgraph():
     wearable_types_df['forge_alloy'] = wearable_types_df['rarity'].apply(lambda x: FORGE_ALLOY_COST[x])
     wearable_types_df['smelt_alloy'] = wearable_types_df['rarity'].apply(lambda x: SMELT_ALLOY_RECEIVED[x])
 
+    # starting supply for wearables is zero starting with Forge Launch wearables
+    wearable_types_df['initial_supply'] = wearable_types_df['maxQuantity'] * (wearable_types_df.index < 350)
+
     return wearable_types_df
+
+def get_wearables_circulating_supply_df(wearable_types_df, forge_items_df):
+    circulating_supply_df = wearable_types_df.merge(forge_items_df[['timesForged', 'timesSmelted', 'change_in_supply']], how='left', left_index=True, right_index=True)
+    circulating_supply_df.fillna(0, inplace=True)
+    circulating_supply_df['circulating_supply'] = circulating_supply_df['initial_supply'] + circulating_supply_df['change_in_supply']
+    return circulating_supply_df

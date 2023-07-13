@@ -129,6 +129,7 @@ def get_forge_items_from_subgraph():
     )
     forge_items_result = forge_item_query.execute(USE_CACHE)
     forge_items_df = get_subgraph_result_df(forge_items_result)
+    forge_items_df.set_index(forge_items_df.index.astype(np.int64), inplace=True)
     int_fields = ['timesForged', 'timesSmelted']
     forge_items_df[int_fields] = forge_items_df[int_fields].astype(np.int64)
     forge_items_df['change_in_supply'] = forge_items_df['timesForged'] - forge_items_df['timesSmelted']
