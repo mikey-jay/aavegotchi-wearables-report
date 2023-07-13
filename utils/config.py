@@ -3,7 +3,7 @@ from utils.time_utils import get_midnight_utc_today, get_first_of_month_utc
 ITEM_TYPE_CATEGORY_WEARABLE = 0
 UPDATE_TIME = get_midnight_utc_today()
 WEI_PER_ETH = 10 ** 18
-USE_CACHE = False
+USE_CACHE = True
 TRAIT_NAMES = ['NRG', 'AGG', 'SPK', 'BRN', 'EYS', 'EYC']
 SLOT_POSITION_NAMES = ['Body', 'Face', 'Eyes', 'Head', 'Hand L', 'Hand R', 'Pet', 'BG']
 RARITY_SCORE_MODIFIERS = { 1: 'common', 2: 'uncommon', 5: 'rare', 10: 'legendary', 20: 'mythical', 50: 'godlike'  }
