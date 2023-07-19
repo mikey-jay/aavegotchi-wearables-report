@@ -28,8 +28,8 @@ class GroupedBarChart:
                 self._bar_containers.append(bars)
                 
         # Set x-axis and y-axis labels and ticks
-        self._ax.set_xlabel('Slot(s)')
-        self._ax.set_ylabel('Proportion of Rarity')
+        self._ax.set_xlabel(x_column_name)
+        self._ax.set_ylabel(y_column_name)
         self._ax.set_xticks(np.arange(len(x_group_names)) + 0.4)
         self._ax.set_xticklabels(x_group_names)
 
@@ -45,7 +45,13 @@ class GroupedBarChart:
                 xy=(bar.get_x() + bar.get_width() / 2, height + bar.get_y()),
                 xytext=(0, 3), # 3 points vertical offset
                 textcoords="offset points",
-                ha='center', va='bottom', rotation=rotation)       
+                ha='center', va='bottom', rotation=rotation)
+
+    def set_title(self, title):
+        return self._ax.set_title(title)
+
+    def set_tick_params(self, **args):
+        return self._ax.tick_params(**args)       
 
     def show(self):
         self._fig.show()
