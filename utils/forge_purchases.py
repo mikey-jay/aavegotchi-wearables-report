@@ -3,7 +3,7 @@ import datetime
 import pandas as pd
 import numpy as np
 from utils.subgraph import get_core_matic_query, get_subgraph_result_df
-from utils.config import START_TIME, END_TIME, QUERY_TIME_INTERVAL, ITEM_TYPE_CATEGORY_ALLOY, USE_CACHE, WEI_PER_ETH, UPDATE_TIME
+from utils.config import START_TIME, END_TIME, QUERY_TIME_INTERVAL, USE_CACHE, WEI_PER_ETH, UPDATE_TIME
 from utils.time_utils import get_first_day_of_week, get_time_intervals
 
 FORGE_PURCHASES_TABLE_NAME = 'forge_purchases'
