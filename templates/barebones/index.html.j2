@@ -1,0 +1,27 @@
+{% extends 'classic/index.html.j2' %}
+{% block body_header %}
+    {{super()}}
+    <h1>Aavegotchi Wearables Report </h1>
+    <p>Using data from {{ resources['data_window_start'] }} to {{ resources['data_window_end'] }} UTC.</p>
+{% endblock body_header %}
+
+{# hide input blocks #}
+{% block input_group %}
+{% endblock input_group %}
+{% block input_prompt %}
+{% endblock input_prompt %}
+{% block in_prompt %}
+{% endblock in_prompt %}
+{% block empty_in_prompt %}
+{% endblock empty_in_prompt %}
+{% block input %}
+{% endblock input %}
+
+{# hide errors #}
+{% block stream_stderr %}
+{% endblock stream_stderr %}
+
+{% block body_footer %}
+    <p>Created by MikeyJay. Made possible with funding from Aavegotchi DAO.</p>
+    {{super()}}
+{% endblock body_footer %}
