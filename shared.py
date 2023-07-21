@@ -38,13 +38,13 @@ itables.options.maxBytes = 0 # disable itable size limit
 get_rarity_sort_value = lambda rarity: list(RARITY_SCORE_MODIFIERS.values()).index(rarity)
 
 # bar charts
-def get_bar_charts(df, category, metrics, colors, annotate_format='{:,.0f}'):
+def get_bar_charts(df, category, metrics, colors, annotate_format='{:,.0f}', annotate_rotation=0):
     fig, axes = plt.subplots(len(metrics))
     fig.set_size_inches(12,6 * len(metrics))
     for row in range(0,len(metrics)):
         m = metrics[row]
         ax = axes[row] if len(metrics) > 1 else axes
-        annotate_bars(ax.bar(df[category], df[m], color=colors[row]), ax, format=annotate_format) # type: ignore
+        annotate_bars(ax.bar(df[category], df[m], color=colors[row]), ax, format=annotate_format, rotation=annotate_rotation)
         ax.set_title('{m}'.format(m=m)) # type: ignore
     return fig, axes
 
