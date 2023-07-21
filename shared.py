@@ -38,24 +38,28 @@ itables.options.maxBytes = 0 # disable itable size limit
 get_rarity_sort_value = lambda rarity: list(RARITY_SCORE_MODIFIERS.values()).index(rarity)
 
 # bar charts
-def get_bar_charts(df, category, metrics, colors, annotate_format='{:,.0f}', annotate_rotation=0):
+def get_bar_charts(df, category, metrics, colors, annotate_format='{:,.0f}', annotate_rotation=0, label_fontsize=16, width=24, height=8):
     fig, axes = plt.subplots(len(metrics))
-    fig.set_size_inches(12,6 * len(metrics))
+    fig.set_size_inches(width,height * len(metrics))
     for row in range(0,len(metrics)):
         m = metrics[row]
         ax = axes[row] if len(metrics) > 1 else axes
-        annotate_bars(ax.bar(df[category], df[m], color=colors[row]), ax, format=annotate_format, rotation=annotate_rotation)
-        ax.set_title('{m}'.format(m=m)) # type: ignore
+        bars = ax.bar(df[category], df[m], color=colors[row])
+        annotate_bars(bars, ax, format=annotate_format, rotation=annotate_rotation, fontsize=label_fontsize)
+        ax.set_title('{m}'.format(m=m), fontsize=label_fontsize*1.5) # set title font size
+        ax.set_xlabel(category, fontsize=label_fontsize) # set x-axis label font size
+        ax.set_ylabel(m, fontsize=label_fontsize) # set y-axis label font size
+        ax.tick_params(axis='both', which='major', labelsize=label_fontsize) # set tick label font size
     return fig, axes
 
-def annotate_bars(bars, ax, format='{:,.0f}', rotation=0):
+def annotate_bars(bars, ax, format='{:,.0f}', rotation=0, fontsize=16):
     for b in bars:
         height = b.get_height()
         ax.annotate(format.format(height),
         xy=(b.get_x() + b.get_width() / 2, height + b.get_y()),
         xytext=(0, 3), # 3 points vertical offset
         textcoords="offset points",
-        ha='center', va='bottom', rotation=rotation)       
+        ha='center', va='bottom', rotation=rotation, fontsize=fontsize) # set font size 
 
 def show_itable(df, order=[[0, 'asc']], dom=ITABLE_DOM_SHORT, title='', precision=0, column_formats={}):
     formatted_df = df.copy()
