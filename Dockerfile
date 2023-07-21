@@ -14,4 +14,4 @@ RUN crontab wearables_crontab
 
 EXPOSE 80
 
-CMD /etc/init.d/cron start && bin/update_wearables_dashboard & lighttpd -D -f lighthttpd.conf
+CMD /etc/init.d/cron start && python main.py & lighttpd -D -f lighthttpd.conf
