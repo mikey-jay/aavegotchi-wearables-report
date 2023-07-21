@@ -3,7 +3,6 @@ pandas==1.4.3
 vcrpy>=4.1.1
 requests>=2.27.1
 ipykernel
-voila
 jupyterlab-myst
 matplotlib
 itables
