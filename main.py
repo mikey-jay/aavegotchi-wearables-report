@@ -11,13 +11,14 @@ notebooks = [
     { 'notebook_file': 'wearables_prices.ipynb', 'html_file': 'wearables-prices.html', 'title': 'Prices', 'section': 'Wearables' },
     { 'notebook_file': 'wearables_supply.ipynb', 'html_file': 'wearables-supply.html', 'title': 'Supply', 'section': 'Wearables' },
     { 'notebook_file': 'wearables_market_cap.ipynb', 'html_file': 'wearables-market-cap.html', 'title': 'Market Cap', 'section': 'Wearables' },
-    { 'notebook_file': 'wearables_core_supply.ipynb', 'html_file': 'core-supply.html', 'title': 'Cores', 'section': 'Wearables' },
     { 'notebook_file': 'wearables_equipped.ipynb', 'html_file': 'wearables-equipped.html', 'title': 'Usage', 'section': 'Wearables' },
     
     { 'notebook_file': 'forge_activity.ipynb', 'html_file': 'forge-activity.html', 'title': 'Usage', 'section': 'Forge' },
+    { 'notebook_file': 'forge_alloy.ipynb', 'html_file': 'forge-alloy.html', 'title': 'Alloy Locked', 'section': 'Forge' },
     { 'notebook_file': 'forge_smithing_skill.ipynb', 'html_file': 'smithing-skill.html', 'title': 'Smithing Skill', 'section': 'Forge' },
     { 'notebook_file': 'forge_sales_volume.ipynb', 'html_file': 'forge-volume.html', 'title': 'Volume', 'section': 'Forge' },
     { 'notebook_file': 'forge_prices.ipynb', 'html_file': 'forge-prices.html', 'title': 'Prices', 'section': 'Forge' },
+    { 'notebook_file': 'wearables_core_supply.ipynb', 'html_file': 'core-supply.html', 'title': 'Cores', 'section': 'Forge' },
     
     { 'notebook_file': 'schematic_trait_selection.ipynb', 'html_file': 'trait-selection.html', 'title': 'Selection', 'section': 'Traits' },
     { 'notebook_file': 'schematic_trait_selection_simulation.ipynb', 'html_file': 'trait-simulation.html', 'title': 'Simulation', 'section': 'Traits' },
