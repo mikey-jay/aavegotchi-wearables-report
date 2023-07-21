@@ -129,9 +129,3 @@ def get_wearables_purchases_types_df(types_df, purchases_df):
     types_merge_columns = ['name', 'rarity', 'slotNames', 'NRG Effect', 'AGG Effect', 'SPK Effect', 'BRN Effect']
     purchases_types_df = purchases_df.merge(types_df[types_merge_columns], how="left", left_on='erc1155TypeId', right_index=True)
     return purchases_types_df
-
-def get_wearables_market_cap_df(types_df, purchases_df):
-    last_price = purchases_df.groupby('erc1155TypeId').last(1)['price'].rename('lastPrice')
-    market_cap_df = types_df.join(last_price).fillna(0)
-    market_cap_df['marketCap'] = market_cap_df['lastPrice'] * market_cap_df['maxQuantity']
-    return market_cap_df
