@@ -9,8 +9,8 @@ COPY . .
 
 RUN apt-get update && apt-get install -y cron lighttpd certbot openssl
 RUN touch /var/log/cron.log
-RUN chmod 0644 wearables_crontab
-RUN crontab wearables_crontab
+RUN chmod 0644 conf/crontab
+RUN crontab conf/crontab
 
 EXPOSE 80
 EXPOSE 443

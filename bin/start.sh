@@ -2,7 +2,7 @@
 
 # Start Lighttpd without SSL support
 echo "Starting Lighttpd without SSL support..."
-lighttpd -D -f lighttpd.conf &
+lighttpd -D -f /usr/src/app/conf/lighttpd.conf &
 
 # Wait for Lighttpd to start
 sleep 5
@@ -31,4 +31,4 @@ python main.py
 
 # Start Lighttpd with SSL support
 echo "Starting Lighttpd with SSL support..."
-lighttpd -D -f lighttpd.ssl.conf
+lighttpd -D -f /usr/src/app/conf/lighttpd.ssl.conf
