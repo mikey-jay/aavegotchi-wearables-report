@@ -23,4 +23,4 @@ RUN certbot certonly --agree-tos --register-unsafely-without-email --webroot -w 
 EXPOSE 80
 EXPOSE 443
 
-CMD /etc/init.d/cron start && python main.py & lighttpd -D -f lighthttpd.conf
+CMD /etc/init.d/cron start && python main.py & lighttpd -D -f lighttpd.conf
