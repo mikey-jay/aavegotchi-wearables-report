@@ -44,7 +44,7 @@ def get_bar_charts(df, category, metrics, colors, annotate_format='{:,.0f}', ann
     for row in range(0,len(metrics)):
         m = metrics[row]
         ax = axes[row] if len(metrics) > 1 else axes
-        bars = ax.bar(df[category], df[m], color=colors[row])
+        bars = ax.bar(df[category], df[m], color=colors[row], width=0.75)
         annotate_bars(bars, ax, format=annotate_format, rotation=annotate_rotation, fontsize=label_fontsize)
         ax.set_title('{m}'.format(m=m), fontsize=label_fontsize*1.5) # set title font size
         ax.set_xlabel(category, fontsize=label_fontsize) # set x-axis label font size
