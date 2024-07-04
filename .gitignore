@@ -1,3 +1,6 @@
+# ssl certs
+ssl/
+
 # Visual Studio Code user prefs
 .vscode/
 
