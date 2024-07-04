@@ -2,7 +2,7 @@ numpy==1.26.4
 pandas==1.4.3
 vcrpy==4.1.1
 requests==2.27.1
-ipykernel==5.5.5
+ipykernel
 jupyterlab-myst
 matplotlib==3.5.2
 itables==1.2.0
