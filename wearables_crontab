@@ -1,2 +1,0 @@
-0 1 * * * /usr/local/bin/python /usr/src/app/main.py
-30 2 * * * /usr/bin/certbot renew --post-hook "systemctl reload lighttpd"
