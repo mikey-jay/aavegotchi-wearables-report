@@ -1,10 +1,15 @@
 import pandas as pd
 import time
 import math
+import os
+from dotenv import load_dotenv
 from subgraph.query import SubgraphQuery
 
-AAVEGOTCHI_CORE_MATIC = "https://subgraph.satsuma-prod.com/tWYl5n5y04oz/aavegotchi/aavegotchi-core-matic/api"
-FORGE_SUBGRAPH_URL = "https://api.thegraph.com/subgraphs/name/sudeepb02/aavegotchi-forge-subgraph"
+# Load environment variables
+load_dotenv()
+
+AAVEGOTCHI_CORE_MATIC = os.getenv("AAVEGOTCHI_CORE_MATIC_URL")
+FORGE_SUBGRAPH_URL = os.getenv("FORGE_SUBGRAPH_URL")
 
 def get_subgraph_result_df(result_obj, id_index=True):
     df = pd.DataFrame(pd.json_normalize(result_obj))
