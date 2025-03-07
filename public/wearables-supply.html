@@ -1,0 +1,364 @@
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Aavegotchi Wearables Report - Wearables Supply</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <style>
+            a.anchor-link { display: none }
+            .output_png img {
+                width: 100%;
+                max-width: 1000px;
+                height: auto;
+            }
+            div.itables table.datatable {
+                width: 100% !important;
+            }
+        </style>
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Aavegotchi Wearables Report</a>
+            <!-- Navbar Search
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form> -->
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <!-- 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+                -->
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            
+                                
+                                <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseWearables" aria-expanded="True" aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-shirt"></i></div>
+                                    Wearables
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse  show" id="collapseWearables" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        
+                                            
+                                                <a class="nav-link" href="index.html">Volume</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="wearables-prices.html">Prices</a>
+                                            
+                                        
+                                            
+                                                <strong><a href="#" class="nav-link">Supply</a></strong>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="wearables-market-cap.html">Market Cap</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="wearables-equipped.html">Usage</a>
+                                            
+                                        
+                                    </nav>
+                                </div>
+                            
+                                
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseForge" aria-expanded="False" aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-hammer"></i></div>
+                                    Forge
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse " id="collapseForge" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        
+                                            
+                                                <a class="nav-link" href="forge-activity.html">Usage</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="forge-alloy.html">Alloy Locked</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="smithing-skill.html">Smithing Skill</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="forge-volume.html">Volume</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="forge-prices.html">Prices</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="core-supply.html">Cores</a>
+                                            
+                                        
+                                    </nav>
+                                </div>
+                            
+                                
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTraits" aria-expanded="False" aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-image-portrait"></i></div>
+                                    Traits
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse " id="collapseTraits" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        
+                                            
+                                                <a class="nav-link" href="trait-selection.html">Selection</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="trait-simulation.html">Simulation</a>
+                                            
+                                        
+                                    </nav>
+                                </div>
+                            
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        Report dates:
+                        <div class="small">01 Mar 2024-06 Mar 2025 UTC</div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+
+<div class="cell border-box-sizing code_cell rendered">
+
+
+</div>
+<div class="row mt-4">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Wearables-Supply">Wearables Supply<a class="anchor-link" href="#Wearables-Supply">&#182;</a></h2><p>With the release of the forge, the amount of wearables in circulation is elastic and will differ from the initial distribution amount.</p>
+<ul>
+<li>Initial Supply - the number of complete wearables upon each wearable's initial release</li>
+<li>Smelted - the number of times wearables have been smelted, or broken down into its components using The Forge</li>
+<li>Forged - the number of times the wearable has been forged from its broken down components</li>
+<li>Circulating Supply - Initial Supply less times smelted, plus times forged. This is the number of complete wearables in circulation currently.</li>
+<li>Total Count - count of the unique type of wearable (schematics) that have been released</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="row mt-4">
+    
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table id="bb3337d5-d953-4a50-9766-5e3d05e0fef3" class="display"style="max-width:100%"><thead>
+    <tr style="text-align: right;">
+      
+      <th>Initial Supply</th>
+      <th># Smelted</th>
+      <th># Forged</th>
+      <th>Circulating Supply</th>
+      <th>Total Count</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td></tr></tbody></table>
+<style>
+table td {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+table th {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+thead input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script type="module">
+    // Import jquery and DataTable
+    import 'https://code.jquery.com/jquery-3.6.0.min.js';
+    import dt from 'https://cdn.datatables.net/1.12.1/js/jquery.dataTables.mjs';
+    dt($);
+
+    // Define the table data
+    const data = [["82,614", "7,126", "4,454", "79,942", "297"]];
+
+    // Define the dt_args
+    let dt_args = {"order": [[0, "asc"]], "paging": false, "dom": "tr", "columnDefs": [{"className": "dt-left", "targets": [0]}]};
+    dt_args["data"] = data;
+
+    $(document).ready(function () {
+        
+        $('#bb3337d5-d953-4a50-9766-5e3d05e0fef3').DataTable(dt_args);
+    });
+</script>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="row mt-4">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Circulating-Supply-By-Wearable">Circulating Supply By Wearable<a class="anchor-link" href="#Circulating-Supply-By-Wearable">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="row mt-4">
+    
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table id="1e2eb690-2ed1-454a-aa67-faa2875a9254" class="display"style="max-width:100%"><thead>
+    <tr style="text-align: right;">
+      
+      <th>name</th>
+      <th>circulating_supply</th>
+      <th>initial_supply</th>
+      <th>timesSmelted</th>
+      <th>timesForged</th>
+      <th>maxQuantity</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td></tr></tbody></table>
+<style>
+table td {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+table th {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+thead input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script type="module">
+    // Import jquery and DataTable
+    import 'https://code.jquery.com/jquery-3.6.0.min.js';
+    import dt from 'https://cdn.datatables.net/1.12.1/js/jquery.dataTables.mjs';
+    dt($);
+
+    // Define the table data
+    const data = [["10 Gallon Hat", "770", "1,000", "251", "21", "1,000"], ["1337 Laptop", "45", "50", "10", "5", "50"], ["23 Jersey", "238", "250", "34", "22", "250"], ["32 ETH Coin", "818", "1,000", "195", "13", "1,000"], ["3D Glasses", "335", "0", "17", "352", "1,000"], ["APY Shades", "494", "500", "12", "6", "500"], ["Aagent Fedora Hat", "292", "308", "28", "12", "308"], ["Aagent Headset", "307", "308", "5", "4", "308"], ["Aagent Pistol", "305", "308", "4", "1", "308"], ["Aagent Shades", "297", "308", "14", "3", "308"], ["Aagent Shirt", "290", "308", "38", "20", "308"], ["Aantenna Bot", "50", "50", "2", "2", "50"], ["Aastronaut Helmet", "973", "1,000", "50", "23", "1,000"], ["Aastronaut Suit", "970", "1,000", "51", "21", "1,000"], ["Aave Boat", "5", "5", "0", "0", "5"], ["Aave Flag", "49", "50", "2", "1", "50"], ["Aave Hero Mask", "988", "1,000", "23", "11", "1,000"], ["Aave Hero Shirt", "921", "1,000", "90", "11", "1,000"], ["Aave Plush", "939", "1,000", "67", "6", "1,000"], ["Alchemica Apron", "47", "0", "19", "66", "500"], ["All-Seeing Eyes", "5", "5", "0", "0", "5"], ["Alluring Eyes", "237", "250", "17", "4", "250"], ["Aloha Flowers", "0", "0", "0", "0", "250"], ["Animal Skins", "462", "500", "44", "6", "500"], ["Ape Mask", "98", "100", "3", "1", "100"], ["Apple Juice", "497", "500", "9", "6", "500"], ["Aviators", "497", "500", "4", "1", "500"], ["Baable Gum", "0", "0", "0", "0", "250"], ["Baby Bottle", "101", "125", "45", "21", "125"], ["Baby Licky", "0", "0", "0", "0", "50"], ["Bandage", "130", "0", "31", "161", "500"], ["Based Shades", "0", "0", "0", "0", "500"], ["Basketball", "901", "1,000", "138", "39", "1,000"], ["Beard of Divinity", "2", "0", "0", "2", "5"], ["Beard of Wisdom", "4", "5", "1", "0", "5"], ["Bedtime Milk", "228", "250", "46", "24", "250"], ["Beer Helmet", "46", "50", "5", "1", "50"], ["Big GHST Token", "981", "1,000", "29", "10", "1,000"], ["Biker Helmet", "230", "250", "33", "13", "250"], ["Biker Jacket", "442", "500", "71", "13", "500"], ["Bitcoin Beanie", "472", "500", "74", "46", "500"], ["Bitcoin Guitar", "99", "100", "6", "5", "100"], ["Black Jeans", "455", "500", "51", "6", "500"], ["Block Scanners", "1", "0", "0", "1", "5"], ["Blue Hawaiian Shirt", "115", "125", "17", "7", "125"], ["Blue Plaid", "5", "5", "0", "0", "5"], ["Bow and Arrow", "963", "1,000", "53", "16", "1,000"], ["Braces", "0", "0", "0", "0", "500"], ["Brunette Ponytail", "835", "1,000", "188", "23", "1,000"], ["Bushy Eyebrows", "5", "5", "1", "1", "5"], ["Camo Hat", "926", "1,000", "106", "32", "1,000"], ["Camo Pants", "878", "1,000", "143", "21", "1,000"], ["Candy Jaar", "235", "250", "17", "2", "250"], ["Captain Aave Mask", "492", "500", "11", "3", "500"], ["Captain Aave Shield", "499", "500", "1", "0", "500"], ["Captain Aave Suit", "497", "500", "6", "3", "500"], ["Cheap Mask", "0", "0", "0", "0", "100"], ["Citaadel Helm", "48", "50", "2", "0", "50"], ["Clutch", "125", "125", "4", "4", "125"], ["Coconut", "239", "250", "12", "1", "250"], ["Coderdan Shades", "50", "50", "0", "0", "50"], ["CoinGecko Tee", "211", "250", "45", "6", "250"], ["Comfy Poncho", "440", "500", "92", "32", "500"], ["Common Rofl", "982", "1,000", "23", "5", "1,000"], ["Common Stohn", "0", "0", "0", "0", "1,000"], ["Common Wizard Hat", "967", "1,000", "39", "6", "1,000"], ["Common Wizard Staff", "952", "1,000", "64", "16", "1,000"], ["Cool shades", "986", "1,000", "21", "7", "1,000"], ["Cyborg Eye", "96", "100", "10", "6", "100"], ["DAO Egg", "246", "250", "6", "2", "250"], ["Day Dress", "115", "125", "14", "4", "125"], ["Doublesided Axe", "498", "500", "4", "2", "500"], ["Dragon Horns", "492", "500", "17", "9", "500"], ["Dragon Wings", "248", "250", "3", "1", "250"], ["ETH Logo Glasses", "955", "1,000", "55", "10", "1,000"], ["ETH Tshirt", "901", "1,000", "213", "114", "1,000"], ["Eagle Armor", "245", "250", "12", "7", "250"], ["Eagle Mask", "244", "250", "17", "11", "250"], ["Elf Ears", "974", "1,000", "30", "4", "1,000"], ["Energy Gun", "48", "50", "3", "1", "50"], ["Eyes of Devotion", "0", "0", "1", "1", "5"], ["FAKE Beret", "9", "0", "0", "9", "50"], ["FAKE Shirt", "14", "0", "0", "14", "50"], ["Faangs", "11", "0", "0", "11", "50"], ["Fairy Wings", "97", "100", "4", "1", "100"], ["Farmer Jeans", "978", "1,000", "29", "7", "1,000"], ["Feathered Cap", "444", "500", "66", "10", "500"], ["Fireball", "998", "1,000", "3", "1", "1,000"], ["Flaming Apron", "14", "0", "6", "20", "100"], ["Flower Studs", "98", "100", "4", "2", "100"], ["Fluffy Pillow", "121", "125", "9", "5", "125"], ["Forge Goggles", "36", "0", "5", "41", "100"], ["Forked Beard", "982", "1,000", "23", "5", "1,000"], ["Foxy Mask", "458", "500", "53", "11", "500"], ["Foxy Tail", "497", "500", "6", "3", "500"], ["Freckles", "0", "0", "0", "0", "1,000"], ["GM Seeds", "39", "0", "14", "53", "1,000"], ["GOATee", "28", "0", "2", "30", "100"], ["Galaxy Brain", "5", "5", "0", "0", "5"], ["Game Controller", "495", "500", "9", "4", "500"], ["Gamer Jacket", "237", "250", "19", "6", "250"], ["Gecko Eyes", "242", "250", "13", "5", "250"], ["Gecko Hat", "247", "250", "3", "0", "250"], ["Geisha Headpiece", "241", "250", "17", "8", "250"], ["Gemstone Ring", "490", "500", "15", "5", "500"], ["Gentleman Coat", "113", "125", "129", "117", "125"], ["Gentleman Hat", "116", "125", "13", "4", "125"], ["Geo", "8", "0", "2", "10", "100"], ["Geode Smasher", "36", "0", "17", "53", "100"], ["GldnXross Robe", "50", "50", "1", "1", "50"], ["Godli Locks", "5", "5", "2", "2", "5"], ["Godlike Cacti", "5", "5", "0", "0", "5"], ["Godlike Rofl", "5", "5", "0", "0", "5"], ["Godlike Wizard Hat", "5", "5", "0", "0", "5"], ["Gold Necklace", "92", "100", "8", "0", "100"], ["Gotchi Mug", "913", "1,000", "162", "75", "1,000"], ["Granny Glasses", "0", "0", "0", "0", "1,000"], ["Guy Fawkes Mask", "959", "1,000", "58", "17", "1,000"], ["H4xx0r Shirt", "80", "100", "243", "223", "100"], ["Haanzo Katana", "4", "5", "1", "0", "5"], ["Halfrekt Shirt", "92", "100", "13", "5", "100"], ["Handsaw", "49", "50", "3", "2", "50"], ["Hazmat Hood", "117", "125", "11", "3", "125"], ["Hazmat Suit", "115", "125", "14", "4", "125"], ["Headphones", "492", "500", "16", "8", "500"], ["Heavenly Robes", "1", "0", "0", "1", "5"], ["Hook Hand", "484", "500", "18", "2", "500"], ["Horned Helmet", "913", "1,000", "98", "11", "1,000"], ["Horseshoe Mustache", "97", "100", "8", "5", "100"], ["Imperial Moustache", "979", "1,000", "22", "1", "1,000"], ["Jaay Glasses", "10", "10", "0", "0", "10"], ["Jaay Hairpiece", "29", "30", "2", "1", "30"], ["Jaay Suit", "18", "20", "8", "6", "20"], ["Jamaican Flag", "248", "250", "4", "2", "250"], ["Jordan Hair", "48", "50", "2", "0", "50"], ["Jordan Suit", "40", "50", "11", "1", "50"], ["Kabuto Helmet", "5", "5", "0", "0", "5"], ["Kawaii Mouth", "0", "0", "0", "0", "50"], ["Kimono", "233", "250", "25", "8", "250"], ["L2 Sign", "830", "1,000", "185", "15", "1,000"], ["Lasso", "473", "500", "29", "2", "500"], ["Leather Tunic", "840", "1,000", "182", "22", "1,000"], ["Legendary Rofl", "90", "100", "14", "4", "100"], ["Legendary Wizard Hat", "113", "125", "53", "41", "125"], ["Legendary Wizard Staff", "124", "125", "1", "0", "125"], ["Lens Frens Plant", "37", "0", "2", "39", "250"], ["Lick Brain", "32", "0", "4", "36", "250"], ["Lick Eyes", "91", "0", "21", "112", "500"], ["Lick Tentacle", "44", "0", "7", "51", "250"], ["Lick Tongue", "100", "0", "10", "110", "250"], ["Lil Bubble Space Suit", "90", "100", "20", "10", "100"], ["Lil Pump Drank", "232", "250", "21", "3", "250"], ["Lil Pump Dreads", "5", "5", "0", "0", "5"], ["Lil Pump Goatee", "493", "500", "9", "2", "500"], ["Lil Pump Shades", "98", "100", "8", "6", "100"], ["Lil Pump Threads", "50", "50", "1", "1", "50"], ["Link Bubbly", "143", "150", "8", "1", "150"], ["Link Cube", "5", "5", "0", "0", "5"], ["Link Mess Dress", "135", "150", "22", "7", "150"], ["Link White Hat", "143", "150", "10", "3", "150"], ["Llamacorn Shirt", "5", "5", "0", "0", "5"], ["Longbow", "493", "500", "18", "11", "500"], ["M67 Grenade", "499", "500", "2", "1", "500"], ["MK2 Grenade", "998", "1,000", "8", "6", "1,000"], ["Maan Bun", "95", "100", "21", "16", "100"], ["Marc Hair", "96", "100", "12", "8", "100"], ["Marc Outfit", "94", "100", "10", "4", "100"], ["Marine Cap", "296", "300", "4", "0", "300"], ["Marine Jacket", "290", "300", "12", "2", "300"], ["Martini", "117", "125", "18", "10", "125"], ["Matrix Eyes", "4", "5", "1", "0", "5"], ["Mechanical Claw", "95", "100", "9", "4", "100"], ["Milkshake", "49", "50", "3", "2", "50"], ["Miner Helmet", "472", "500", "37", "9", "500"], ["Miner Jeans", "426", "500", "83", "9", "500"], ["Mohawk", "481", "500", "26", "7", "500"], ["Monocle", "45", "50", "6", "1", "50"], ["Mudgen Diamond", "49", "50", "1", "0", "50"], ["Mutton Chops", "236", "250", "22", "8", "250"], ["Mythical Cacti", "50", "50", "1", "1", "50"], ["Mythical Rofl", "50", "50", "0", "0", "50"], ["Mythical Wizard Hat", "47", "50", "5", "2", "50"], ["Nail Gun", "42", "0", "7", "49", "250"], ["Nimbus", "308", "0", "5", "313", "1,000"], ["OKex Sign", "38", "40", "2", "0", "40"], ["Overalls", "22", "0", "35", "57", "500"], ["Paint Brush", "12", "0", "1", "13", "50"], ["Paint Palette", "5", "0", "2", "7", "50"], ["Pajama Hat", "943", "1,000", "69", "12", "1,000"], ["Pajama Shirt", "459", "500", "45", "4", "500"], ["Paper Fan", "249", "250", "5", "4", "250"], ["Parasol", "45", "50", "6", "1", "50"], ["Party Dress", "29", "0", "17", "46", "1,000"], ["Pickaxe", "238", "250", "21", "9", "250"], ["Pillbox Hat", "121", "125", "22", "18", "125"], ["Pirate Coat", "412", "500", "104", "16", "500"], ["Pirate Hat", "942", "1,000", "75", "17", "1,000"], ["Pirate Patch", "248", "250", "8", "6", "250"], ["Pitchfork", "998", "1,000", "2", "0", "1,000"], ["Pixelcraft Square", "109", "0", "20", "129", "1,000"], ["Pixelcraft Tee", "160", "0", "101", "261", "1,000"], ["Plastic Earrings", "33", "0", "6", "39", "1,000"], ["Plate Armor", "49", "50", "1", "0", "50"], ["Plate Shield", "50", "50", "0", "0", "50"], ["Pointy Horns", "97", "100", "8", "5", "100"], ["Polygon Cap", "244", "250", "11", "5", "250"], ["Polygon Shirt", "484", "500", "31", "15", "500"], ["Poncho Hoodie", "920", "1,000", "109", "29", "1,000"], ["Portal Mage Armor", "124", "125", "3", "2", "125"], ["Portal Mage Axe", "122", "125", "8", "5", "125"], ["Portal Mage Black Axe", "5", "5", "2", "2", "5"], ["Portal Mage Helmet", "124", "125", "3", "2", "125"], ["Princess Hair", "48", "50", "5", "3", "50"], ["Princess Tiara", "235", "250", "18", "3", "250"], ["Punk Shirt", "90", "100", "17", "7", "100"], ["REKT Sign", "98", "100", "5", "3", "100"], ["Radar Eyes", "49", "50", "3", "2", "50"], ["Rainbow Vomit", "47", "50", "4", "1", "50"], ["Rare Cacti", "245", "250", "6", "1", "250"], ["Rare Rofl", "246", "250", "7", "3", "250"], ["Rare Stohn", "0", "0", "0", "0", "250"], ["Rasta Glasses", "0", "0", "0", "0", "500"], ["Rasta Hat", "467", "500", "105", "72", "500"], ["Rasta Shirt", "469", "500", "32", "1", "500"], ["Red Hair", "95", "100", "21", "16", "100"], ["Red Hawaiian Shirt", "44", "50", "9", "3", "50"], ["Red Headband", "238", "250", "24", "12", "250"], ["Red Plaid", "48", "50", "6", "4", "50"], ["Red Santa Hat", "351", "389", "43", "5", "389"], ["Roflnoggin", "1", "0", "0", "1", "5"], ["Royal Crown", "92", "100", "8", "0", "100"], ["Royal Robes", "48", "50", "9", "7", "50"], ["Royal Scepter", "238", "250", "15", "3", "250"], ["Safety Glasses", "38", "0", "11", "49", "250"], ["Sandbox Hoodie", "7", "0", "4", "11", "100"], ["Sebastien Hair", "12", "0", "0", "12", "100"], ["Sergey Beard", "46", "50", "4", "0", "50"], ["Sergey Eyes", "50", "50", "3", "3", "50"], ["Shaaman Hoodie", "92", "100", "13", "5", "100"], ["Shaaman Poncho", "49", "50", "1", "0", "50"], ["Signal Headset", "46", "50", "5", "1", "50"], ["Skateboard", "245", "250", "5", "0", "250"], ["Snapshot Cap", "243", "250", "17", "10", "250"], ["Snapshot Shirt", "443", "500", "72", "15", "500"], ["Snow Camo Hat", "478", "500", "38", "16", "500"], ["Snow Camo Pants", "475", "500", "36", "11", "500"], ["Space Helmet", "89", "100", "23", "12", "100"], ["Spirit Sword", "50", "50", "0", "0", "50"], ["Staff Charming", "2", "0", "0", "2", "5"], ["Staff of Creation", "1", "0", "1", "2", "5"], ["Stani Hair", "5", "5", "0", "0", "5"], ["Stani Vest", "5", "5", "0", "0", "5"], ["Steampunk Goggles", "240", "250", "15", "5", "250"], ["Steampunk Trousers", "441", "500", "79", "20", "500"], ["Straw Hat", "991", "1,000", "16", "7", "1,000"], ["Sus Butterfly", "98", "100", "5", "3", "100"], ["Sushi Bandana", "241", "250", "17", "8", "250"], ["Sushi Coat", "244", "250", "11", "5", "250"], ["Sushi Knife", "249", "250", "3", "2", "250"], ["Sushi Piece", "121", "125", "5", "1", "125"], ["Sweatband", "489", "500", "14", "3", "500"], ["Taoist Robe", "5", "5", "0", "0", "5"], ["Thaave Hammer", "249", "250", "3", "2", "250"], ["Thaave Helmet", "246", "250", "9", "5", "250"], ["Thaave Suit", "247", "250", "8", "5", "250"], ["Tinted Shades", "247", "250", "10", "7", "250"], ["Tiny Crown", "442", "500", "64", "6", "500"], ["Track Shorts", "448", "500", "56", "4", "500"], ["Track Suit", "112", "125", "19", "6", "125"], ["Trezor Wallet", "496", "500", "11", "7", "500"], ["Uncommon Cacti", "498", "500", "2", "0", "500"], ["Uncommon Rofl", "499", "500", "3", "2", "500"], ["Uncommon Stohn", "0", "0", "0", "0", "500"], ["Up Arrow", "490", "500", "17", "7", "500"], ["Up Only Shirt", "462", "500", "42", "4", "500"], ["Uranium Rod", "5", "5", "0", "0", "5"], ["V-Neck Shirt", "220", "250", "54", "24", "250"], ["VR Headset", "50", "50", "2", "2", "50"], ["Vote Sign", "926", "1,000", "99", "25", "1,000"], ["Voxel Eyes", "9", "0", "3", "12", "100"], ["WGMI Shirt", "241", "250", "29", "20", "250"], ["Wagie Cap", "461", "500", "42", "3", "500"], ["Waifu Pillow", "98", "100", "9", "7", "100"], ["Walkie Talkie", "296", "300", "6", "2", "300"], ["Water Jug", "118", "125", "46", "39", "125"], ["Water bottle", "495", "500", "6", "1", "500"], ["Wavy Hair", "44", "0", "9", "53", "1,000"], ["Wild Fungi", "0", "0", "0", "0", "100"], ["Wine", "247", "250", "32", "29", "250"], ["Witchy Cloak", "117", "125", "30", "22", "125"], ["Witchy Hat", "116", "125", "13", "4", "125"], ["Witchy Wand", "48", "50", "4", "2", "50"], ["Wizard Visor", "988", "1,000", "23", "11", "1,000"], ["Wraangler Jeans", "891", "1,000", "130", "21", "1,000"], ["Xibot Mohawk", "50", "50", "2", "2", "50"], ["Yoroi Armor", "5", "5", "1", "1", "5"], ["uGOTCHI Token", "975", "1,000", "32", "7", "1,000"]];
+
+    // Define the dt_args
+    let dt_args = {"order": [[0, "asc"]], "paging": true, "dom": "lftipr", "columnDefs": [{"className": "dt-left", "targets": [0]}]};
+    dt_args["data"] = data;
+
+    $(document).ready(function () {
+        
+        $('#1e2eb690-2ed1-454a-aa67-faa2875a9254').DataTable(dt_args);
+    });
+</script>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div>Created by MikeyJay &middot; Made possible with funding from Aavegotchi DAO &middot; <a href="https://github.com/mikey-jay/aavegotchi-wearables-report">Source code</a> </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>

@@ -1,0 +1,359 @@
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Aavegotchi Wearables Report - Traits Selection</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <style>
+            a.anchor-link { display: none }
+            .output_png img {
+                width: 100%;
+                max-width: 1000px;
+                height: auto;
+            }
+            div.itables table.datatable {
+                width: 100% !important;
+            }
+        </style>
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Aavegotchi Wearables Report</a>
+            <!-- Navbar Search
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form> -->
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <!-- 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+                -->
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            
+                                
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseWearables" aria-expanded="False" aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-shirt"></i></div>
+                                    Wearables
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse " id="collapseWearables" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        
+                                            
+                                                <a class="nav-link" href="index.html">Volume</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="wearables-prices.html">Prices</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="wearables-supply.html">Supply</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="wearables-market-cap.html">Market Cap</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="wearables-equipped.html">Usage</a>
+                                            
+                                        
+                                    </nav>
+                                </div>
+                            
+                                
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseForge" aria-expanded="False" aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-hammer"></i></div>
+                                    Forge
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse " id="collapseForge" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        
+                                            
+                                                <a class="nav-link" href="forge-activity.html">Usage</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="forge-alloy.html">Alloy Locked</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="smithing-skill.html">Smithing Skill</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="forge-volume.html">Volume</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="forge-prices.html">Prices</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="core-supply.html">Cores</a>
+                                            
+                                        
+                                    </nav>
+                                </div>
+                            
+                                
+                                <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTraits" aria-expanded="True" aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-image-portrait"></i></div>
+                                    Traits
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse  show" id="collapseTraits" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        
+                                            
+                                                <strong><a href="#" class="nav-link">Selection</a></strong>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="trait-simulation.html">Simulation</a>
+                                            
+                                        
+                                    </nav>
+                                </div>
+                            
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        Report dates:
+                        <div class="small">01 Mar 2024-06 Mar 2025 UTC</div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+
+<div class="cell border-box-sizing code_cell rendered">
+
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+
+</div>
+<div class="row mt-4">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Top-Trait-Modifier-Choices-for-New-Schematics">Top Trait Modifier Choices for New Schematics<a class="anchor-link" href="#Top-Trait-Modifier-Choices-for-New-Schematics">&#182;</a></h1><p>Use this table to identify suitable trait modifier combinations for newly released wearable schematics given a particular rarity and slot.</p>
+<p>This table shows the top choices (up to 5) for trait modifier combinations by slot and rarity using the trait selection methodology described in the <a href="https://docs.google.com/document/d/1D9e2FEh5NnYXrPEK28UF7GWpsI1ybOsCY94x1kGCpJs/edit?usp=drive_link">Wearable Trait Selection: A Quantitative Approach</a> litepaper. The respective delta standard deviations are shown for each combination (lower numbers are better). Any choices that would negatively impact meta balance (delta standard deviation &gt; 0) have been omitted.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="row mt-4">
+    
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table id="e5be871e-84ff-4ae1-b981-247e26c3951d" class="display"style="max-width:100%"><thead>
+    <tr style="text-align: right;">
+      
+      <th>rarity</th>
+      <th>slot</th>
+      <th>trait_modifiers_to_add</th>
+      <th>change_in_rarity_slot_fit_count_stddev</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td></tr></tbody></table>
+<style>
+table td {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+table th {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+thead input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script type="module">
+    // Import jquery and DataTable
+    import 'https://code.jquery.com/jquery-3.6.0.min.js';
+    import dt from 'https://cdn.datatables.net/1.12.1/js/jquery.dataTables.mjs';
+    dt($);
+
+    // Define the table data
+    const data = [["common", "Body", "[['AGG-'], ['SPK-'], ['BRN+']]", "[-0.28, -0.28, -0.09]"], ["common", "Eyes", "[['BRN+']]", "[-0.52]"], ["common", "Hand L, Hand R", "[['NRG-'], ['AGG-'], ['BRN-']]", "[-0.45, -0.08, -0.08]"], ["common", "Head", "[['NRG+'], ['SPK-']]", "[-0.21, -0.21]"], ["common", "Pet", "[['AGG+']]", "[-0.52]"], ["uncommon", "Body", "[['NRG-'], ['AGG-'], ['SPK-'], ['BRN+'], ['NRG-', 'AGG-']]", "[-0.1, -0.1, -0.1, -0.1, -0.08]"], ["uncommon", "Hand L, Hand R", "[['NRG-'], ['NRG-', 'SPK+'], ['NRG-', 'AGG-'], ['NRG-', 'BRN-'], ['AGG-', 'BRN-']]", "[-0.31, -0.21, -0.17, -0.17, -0.17]"], ["uncommon", "Head", "[['NRG-', 'AGG+'], ['AGG+', 'SPK-'], ['NRG-'], ['BRN+'], ['NRG-', 'BRN+']]", "[-0.25, -0.2, -0.17, -0.17, -0.15]"], ["uncommon", "Pet", "[['NRG+', 'BRN-'], ['NRG+', 'AGG+'], ['NRG+', 'SPK+'], ['AGG+', 'BRN-'], ['SPK+', 'BRN-']]", "[-0.19, -0.06, -0.06, -0.06, -0.06]"], ["rare", "Body", "[['AGG+', 'SPK-'], ['SPK-'], ['SPK-', 'BRN+'], ['NRG+', 'AGG+', 'SPK-'], ['NRG-', 'AGG+', 'SPK-']]", "[-0.28, -0.2, -0.13, -0.12, -0.12]"], ["rare", "Eyes", "[['SPK-'], ['AGG+', 'SPK-'], ['NRG-', 'AGG+', 'SPK-'], ['AGG+', 'SPK-', 'BRN+'], ['NRG-', 'SPK-']]", "[-0.29, -0.25, -0.18, -0.18, -0.17]"], ["rare", "Face", "[['AGG-', 'SPK+', 'BRN+']]", "[-0.34]"], ["rare", "Hand L, Hand R", "[['BRN+'], ['NRG-', 'BRN+'], ['AGG-', 'BRN+'], ['AGG-', 'SPK+'], ['NRG-', 'SPK+']]", "[-0.21, -0.21, -0.17, -0.17, -0.17]"], ["rare", "Head", "[['BRN-'], ['AGG+', 'BRN-'], ['NRG+', 'AGG+', 'BRN-'], ['AGG+', 'SPK-', 'BRN-'], ['AGG+']]", "[-0.28, -0.24, -0.14, -0.14, -0.13]"], ["rare", "Pet", "[['NRG+', 'SPK+', 'BRN-'], ['NRG+', 'SPK+'], ['NRG+', 'BRN-'], ['SPK+', 'BRN-'], ['NRG+', 'AGG+', 'SPK+']]", "[-0.17, -0.07, -0.07, -0.07, -0.02]"], ["legendary", "Body", "[['NRG-', 'AGG+'], ['NRG-', 'AGG+', 'BRN-'], ['NRG+', 'AGG-'], ['NRG-', 'AGG+', 'SPK+'], ['NRG-', 'AGG+', 'SPK-']]", "[-0.21, -0.14, -0.11, -0.09, -0.09]"], ["legendary", "Eyes", "[['NRG-', 'AGG+', 'SPK-'], ['NRG-', 'AGG+'], ['NRG-', 'SPK-'], ['AGG+', 'SPK-'], ['NRG-', 'AGG+', 'BRN+']]", "[-0.17, -0.07, -0.07, -0.07, -0.02]"], ["legendary", "Hand L", "[['BRN+'], ['NRG+', 'BRN+'], ['NRG-', 'BRN+'], ['AGG+', 'BRN+'], ['AGG-', 'BRN+']]", "[-0.52, -0.07, -0.07, -0.07, -0.07]"], ["legendary", "Hand L, Hand R", "[['NRG-'], ['NRG-', 'SPK+'], ['NRG-', 'BRN+'], ['AGG-', 'SPK+'], ['SPK+']]", "[-0.28, -0.24, -0.24, -0.24, -0.2]"], ["legendary", "Head", "[['NRG+', 'AGG-'], ['NRG+', 'SPK-'], ['NRG+', 'AGG-', 'BRN-'], ['NRG+', 'AGG-', 'SPK+'], ['NRG+']]", "[-0.2, -0.13, -0.12, -0.12, -0.06]"], ["mythical", "Body", "[['SPK-', 'BRN+'], ['BRN+'], ['AGG+', 'SPK-', 'BRN+'], ['NRG-', 'SPK-', 'BRN+'], ['AGG+', 'BRN+']]", "[-0.28, -0.2, -0.16, -0.16, -0.13]"], ["mythical", "Eyes", "[['BRN-'], ['AGG-', 'BRN-'], ['NRG+', 'AGG-', 'BRN-'], ['AGG-', 'SPK+', 'BRN-'], ['AGG-', 'SPK-', 'BRN-']]", "[-0.24, -0.24, -0.18, -0.1, -0.1]"], ["mythical", "Face", "[['NRG+', 'AGG+', 'BRN+']]", "[-0.34]"], ["mythical", "Hand L, Hand R", "[['SPK+', 'BRN-'], ['SPK+'], ['AGG+', 'SPK+'], ['AGG+', 'SPK+', 'BRN-'], ['NRG+', 'AGG+']]", "[-0.28, -0.24, -0.21, -0.19, -0.15]"], ["mythical", "Head", "[['NRG-', 'BRN+'], ['BRN+'], ['AGG+', 'BRN+'], ['NRG-', 'SPK-', 'BRN+'], ['NRG-', 'AGG+', 'BRN+']]", "[-0.29, -0.25, -0.22, -0.16, -0.16]"], ["mythical", "Pet", "[['AGG+', 'SPK+', 'BRN+'], ['AGG+', 'SPK+'], ['AGG+', 'BRN+'], ['SPK+', 'BRN+'], ['NRG+', 'AGG+', 'SPK+']]", "[-0.17, -0.07, -0.07, -0.07, -0.02]"], ["godlike", "Body", "[['AGG+', 'SPK-'], ['AGG+'], ['NRG+', 'BRN+'], ['AGG+', 'SPK-', 'BRN-'], ['AGG+', 'SPK-', 'BRN+']]", "[-0.21, -0.16, -0.12, -0.09, -0.09]"], ["godlike", "Eyes", "[['NRG+'], ['NRG+', 'SPK+'], ['NRG+', 'BRN+'], ['NRG+', 'AGG+', 'SPK+'], ['NRG+', 'AGG-', 'SPK+']]", "[-0.2, -0.14, -0.14, -0.06, -0.06]"], ["godlike", "Face", "[['NRG+', 'SPK+'], ['NRG+', 'BRN+'], ['SPK+', 'BRN-'], ['NRG+', 'AGG+', 'SPK+'], ['NRG+', 'AGG-', 'SPK+']]", "[-0.07, -0.07, -0.07, -0.02, -0.02]"], ["godlike", "Hand L, Hand R", "[['AGG-'], ['NRG-', 'AGG-'], ['AGG-', 'SPK+'], ['AGG-', 'SPK+', 'BRN-'], ['NRG-', 'AGG-', 'BRN+']]", "[-0.35, -0.2, -0.2, -0.12, -0.12]"], ["godlike", "Head", "[['BRN-'], ['AGG-', 'BRN-'], ['NRG-', 'BRN-'], ['SPK-', 'BRN-'], ['AGG-', 'SPK-', 'BRN-']]", "[-0.32, -0.27, -0.18, -0.18, -0.11]"], ["godlike", "Pet", "[['AGG+'], ['NRG+', 'AGG+'], ['AGG+', 'SPK+'], ['NRG+', 'AGG+', 'BRN-'], ['NRG+', 'AGG+', 'SPK+']]", "[-0.21, -0.15, -0.15, -0.11, -0.11]"]];
+
+    // Define the dt_args
+    let dt_args = {"order": [], "paging": false, "dom": "tr", "columnDefs": [{"className": "dt-left", "targets": [0]}]};
+    dt_args["data"] = data;
+
+    $(document).ready(function () {
+        
+        $('#e5be871e-84ff-4ae1-b981-247e26c3951d').DataTable(dt_args);
+    });
+</script>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="row mt-4">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Top-Trait-Combinations-for-New-Sets">Top Trait Combinations for New Sets<a class="anchor-link" href="#Top-Trait-Combinations-for-New-Sets">&#182;</a></h1><p>Use this table to determine which trait combinations fit best together in a new 3-piece set, for set balance purposes. Calculation is done by counting the number of unique wearables each gotchi could equip in a perfectly fitting set (all traits match for set bonuses and wearables). Lesser used sets (for example, sets with a high rarity spread- combining godlike with common wearables, etc) are excluded from the calculation to better reflect the usefulness of each gotchi's current sets.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="row mt-4">
+    
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table id="92552af5-ae95-469f-955f-971245cb4a18" class="display"style="max-width:100%"><thead>
+    <tr style="text-align: right;">
+      
+      <th>trait_modifiers_to_add</th>
+      <th>trait_modifier_count</th>
+      <th>change_in_fit_count_stddev</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td></tr></tbody></table>
+<style>
+table td {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+table th {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+thead input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script type="module">
+    // Import jquery and DataTable
+    import 'https://code.jquery.com/jquery-3.6.0.min.js';
+    import dt from 'https://cdn.datatables.net/1.12.1/js/jquery.dataTables.mjs';
+    dt($);
+
+    // Define the table data
+    const data = [["['NRG+']", "1", "0.39"], ["['NRG-']", "1", "-0.19"], ["['AGG+']", "1", "-0.10"], ["['AGG-']", "1", "0.31"], ["['SPK+']", "1", "0.41"], ["['SPK-']", "1", "-0.21"], ["['BRN+']", "1", "0.16"], ["['BRN-']", "1", "0.05"], ["['NRG+', 'AGG+']", "2", "0.33"], ["['NRG+', 'AGG-']", "2", "0.12"], ["['NRG-', 'AGG+']", "2", "-0.39"], ["['NRG-', 'AGG-']", "2", "0.24"], ["['NRG+', 'SPK+']", "2", "0.58"], ["['NRG+', 'SPK-']", "2", "-0.14"], ["['NRG-', 'SPK+']", "2", "-0.12"], ["['NRG-', 'SPK-']", "2", "-0.02"], ["['NRG+', 'BRN+']", "2", "0.34"], ["['NRG+', 'BRN-']", "2", "0.10"], ["['NRG-', 'BRN+']", "2", "-0.14"], ["['NRG-', 'BRN-']", "2", "0.00"], ["['AGG+', 'SPK+']", "2", "0.64"], ["['AGG+', 'SPK-']", "2", "-0.74"], ["['AGG-', 'SPK+']", "2", "-0.19"], ["['AGG-', 'SPK-']", "2", "0.54"], ["['AGG+', 'BRN+']", "2", "-0.34"], ["['AGG+', 'BRN-']", "2", "0.28"], ["['AGG-', 'BRN+']", "2", "0.53"], ["['AGG-', 'BRN-']", "2", "-0.18"], ["['SPK+', 'BRN+']", "2", "0.38"], ["['SPK+', 'BRN-']", "2", "0.09"], ["['SPK-', 'BRN+']", "2", "-0.18"], ["['SPK-', 'BRN-']", "2", "0.02"], ["['NRG+', 'AGG+', 'SPK+']", "3", "0.67"], ["['NRG+', 'AGG+', 'SPK-']", "3", "-0.36"], ["['NRG+', 'AGG-', 'SPK+']", "3", "-0.09"], ["['NRG+', 'AGG-', 'SPK-']", "3", "0.22"], ["['NRG-', 'AGG+', 'SPK+']", "3", "-0.02"], ["['NRG-', 'AGG+', 'SPK-']", "3", "-0.36"], ["['NRG-', 'AGG-', 'SPK+']", "3", "-0.09"], ["['NRG-', 'AGG-', 'SPK-']", "3", "0.34"], ["['NRG+', 'AGG+', 'BRN+']", "3", "0.02"], ["['NRG+', 'AGG+', 'BRN-']", "3", "0.32"], ["['NRG+', 'AGG-', 'BRN+']", "3", "0.34"], ["['NRG+', 'AGG-', 'BRN-']", "3", "-0.21"], ["['NRG-', 'AGG+', 'BRN+']", "3", "-0.34"], ["['NRG-', 'AGG+', 'BRN-']", "3", "-0.04"], ["['NRG-', 'AGG-', 'BRN+']", "3", "0.20"], ["['NRG-', 'AGG-', 'BRN-']", "3", "0.05"], ["['NRG+', 'SPK+', 'BRN+']", "3", "0.39"], ["['NRG+', 'SPK+', 'BRN-']", "3", "0.20"], ["['NRG+', 'SPK-', 'BRN+']", "3", "-0.04"], ["['NRG+', 'SPK-', 'BRN-']", "3", "-0.09"], ["['NRG-', 'SPK+', 'BRN+']", "3", "-0.00"], ["['NRG-', 'SPK+', 'BRN-']", "3", "-0.11"], ["['NRG-', 'SPK-', 'BRN+']", "3", "-0.12"], ["['NRG-', 'SPK-', 'BRN-']", "3", "0.12"], ["['AGG+', 'SPK+', 'BRN+']", "3", "0.27"], ["['AGG+', 'SPK+', 'BRN-']", "3", "0.39"], ["['AGG+', 'SPK-', 'BRN+']", "3", "-0.61"], ["['AGG+', 'SPK-', 'BRN-']", "3", "-0.11"], ["['AGG-', 'SPK+', 'BRN+']", "3", "0.12"], ["['AGG-', 'SPK+', 'BRN-']", "3", "-0.30"], ["['AGG-', 'SPK-', 'BRN+']", "3", "0.42"], ["['AGG-', 'SPK-', 'BRN-']", "3", "0.14"], ["['NRG+', 'AGG+', 'SPK+', 'BRN+']", "4", "0.29"], ["['NRG+', 'AGG+', 'SPK+', 'BRN-']", "4", "0.39"], ["['NRG+', 'AGG+', 'SPK-', 'BRN+']", "4", "-0.28"], ["['NRG+', 'AGG+', 'SPK-', 'BRN-']", "4", "-0.07"], ["['NRG+', 'AGG-', 'SPK+', 'BRN+']", "4", "0.10"], ["['NRG+', 'AGG-', 'SPK+', 'BRN-']", "4", "-0.19"], ["['NRG+', 'AGG-', 'SPK-', 'BRN+']", "4", "0.24"], ["['NRG+', 'AGG-', 'SPK-', 'BRN-']", "4", "-0.02"], ["['NRG-', 'AGG+', 'SPK+', 'BRN+']", "4", "-0.02"], ["['NRG-', 'AGG+', 'SPK+', 'BRN-']", "4", "0.00"], ["['NRG-', 'AGG+', 'SPK-', 'BRN+']", "4", "-0.32"], ["['NRG-', 'AGG+', 'SPK-', 'BRN-']", "4", "-0.03"], ["['NRG-', 'AGG-', 'SPK+', 'BRN+']", "4", "0.02"], ["['NRG-', 'AGG-', 'SPK+', 'BRN-']", "4", "-0.10"], ["['NRG-', 'AGG-', 'SPK-', 'BRN+']", "4", "0.19"], ["['NRG-', 'AGG-', 'SPK-', 'BRN-']", "4", "0.16"]];
+
+    // Define the dt_args
+    let dt_args = {"order": [[2, "asc"]], "paging": true, "dom": "lftipr", "columnDefs": [{"className": "dt-left", "targets": [0]}]};
+    dt_args["data"] = data;
+
+    $(document).ready(function () {
+        
+        $('#92552af5-ae95-469f-955f-971245cb4a18').DataTable(dt_args);
+    });
+</script>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div>Created by MikeyJay &middot; Made possible with funding from Aavegotchi DAO &middot; <a href="https://github.com/mikey-jay/aavegotchi-wearables-report">Source code</a> </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>

@@ -1,0 +1,263 @@
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Aavegotchi Wearables Report - Forge Smithing Skill</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <style>
+            a.anchor-link { display: none }
+            .output_png img {
+                width: 100%;
+                max-width: 1000px;
+                height: auto;
+            }
+            div.itables table.datatable {
+                width: 100% !important;
+            }
+        </style>
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Aavegotchi Wearables Report</a>
+            <!-- Navbar Search
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form> -->
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <!-- 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+                -->
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            
+                                
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseWearables" aria-expanded="False" aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-shirt"></i></div>
+                                    Wearables
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse " id="collapseWearables" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        
+                                            
+                                                <a class="nav-link" href="index.html">Volume</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="wearables-prices.html">Prices</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="wearables-supply.html">Supply</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="wearables-market-cap.html">Market Cap</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="wearables-equipped.html">Usage</a>
+                                            
+                                        
+                                    </nav>
+                                </div>
+                            
+                                
+                                <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseForge" aria-expanded="True" aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-hammer"></i></div>
+                                    Forge
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse  show" id="collapseForge" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        
+                                            
+                                                <a class="nav-link" href="forge-activity.html">Usage</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="forge-alloy.html">Alloy Locked</a>
+                                            
+                                        
+                                            
+                                                <strong><a href="#" class="nav-link">Smithing Skill</a></strong>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="forge-volume.html">Volume</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="forge-prices.html">Prices</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="core-supply.html">Cores</a>
+                                            
+                                        
+                                    </nav>
+                                </div>
+                            
+                                
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTraits" aria-expanded="False" aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fa-solid fa-image-portrait"></i></div>
+                                    Traits
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse " id="collapseTraits" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        
+                                            
+                                                <a class="nav-link" href="trait-selection.html">Selection</a>
+                                            
+                                        
+                                            
+                                                <a class="nav-link" href="trait-simulation.html">Simulation</a>
+                                            
+                                        
+                                    </nav>
+                                </div>
+                            
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        Report dates:
+                        <div class="small">01 Mar 2024-06 Mar 2025 UTC</div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+
+<div class="cell border-box-sizing code_cell rendered">
+
+
+</div>
+<div class="row mt-4">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Top-Gotchis-by-Forge-Smithing-Skill">Top Gotchis by Forge Smithing Skill<a class="anchor-link" href="#Top-Gotchis-by-Forge-Smithing-Skill">&#182;</a></h2><p>Gotchis earn smithing skill experience points when using The Forge. The table below is the cumulative total skill points for all gotchis. This encompasses all dates since the inception of The Forge and is updated once daily.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="row mt-4">
+    
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table id="f0a20993-d033-44d5-84ec-ff6b6ed346bf" class="display"style="max-width:100%"><thead>
+    <tr style="text-align: right;">
+      
+      <th>name</th>
+      <th>rank</th>
+      <th>smithingLevel</th>
+      <th>skillPoints</th>
+      <th>owner</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td></tr></tbody></table>
+<style>
+table td {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+table th {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+thead input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script type="module">
+    // Import jquery and DataTable
+    import 'https://code.jquery.com/jquery-3.6.0.min.js';
+    import dt from 'https://cdn.datatables.net/1.12.1/js/jquery.dataTables.mjs';
+    dt($);
+
+    // Define the table data
+    const data = [["dendy", "1", "24", "104,892", "0x1315b9510cd7f75a63bb59ba7d9d1fad083d0667"], ["Scavenger", "2", "22", "55,500", "0xa532f169cee0e551d4da641031ac78fd85461035"], ["FAKE gotchis", "3", "21", "35,220", "0xa9465d03ba38726277b3e478ac98aa063a0c8d0a"], ["Satoshi N.", "6", "20", "26,118", "0x137c0f7d6b2558edf5b8f69eec0635dd43fad6af"], ["Immaterial", "5", "20", "27,400", "0xfe698c212526f15cc25af671beba14aac309457f"], ["Gotchichain", "7", "20", "24,330", "0x50bece72c12e4d23c4a8c3802ab35318780aa7b6"], ["Aavomination", "4", "20", "28,748", "0x478fa4c971a077038b4fc5c172c3af5552224ccc"], ["Feature", "8", "19", "20,676", "0xd281f988242c900d67ff2aafabe683b8004ee778"], ["Goobz", "10", "19", "16,768", "0xba39c047714b4ca6244dc433d3ae3924691e0171"], ["Bearded", "9", "19", "20,546", "0xfe698c212526f15cc25af671beba14aac309457f"], ["Gotchi Gaming Gang", "14", "18", "13,882", "0xa7f1c77998bae58614be010ad2a806639e280056"], ["Pico", "13", "18", "14,084", "0xb9ff017c875f5c39d0018d1df86fbd92943d5b82"], ["Sexy FOX", "12", "18", "15,016", "0xa9465d03ba38726277b3e478ac98aa063a0c8d0a"], ["Fantasma", "11", "18", "15,216", "0xffea5a2cfaf1aafbb87a1fe4eed5413da45c30a0"], ["IBAI", "16", "17", "11,634", "0x5b95a971b4583a5f011e9da082acdd679b870d06"], ["Rembraandt", "15", "17", "11,890", "0x305ea81690998383a6965244092b66f9692af230"], ["I know", "17", "17", "10,804", "0xae79077d8d922d071797a7f8849430fed488c005"], ["Usul", "20", "16", "7,852", "0x4177a5c0e2369f6830a4c3825afc8fb3dd47790d"], ["KTeam_01-01", "25", "16", "6,218", "0x40aed3f394f2f0c168d4033a31ecf2248197ddfb"], ["@GOTCHIGANG", "24", "16", "6,736", "0x47d6f96ba098816389db7c87cbf077de7181b853"], ["The Chosen One", "21", "16", "7,324", "0x1d0542b616c691a002e90a713e7d094c0f8e022d"], ["Gabba", "18", "16", "8,448", "0x03e2c5ba88b9eb75a6f698864eebdee83f94b870"], ["Cyber Truck", "26", "16", "6,178", "0x579361d2636152df34db1d6dfd343f5037ddc71d"], ["Son of a WAIFU", "22", "16", "7,234", "0xc4cb6cb969e8b4e309ab98e4da51b77887afad96"], ["HARDKOR'S MOM'S GOTCHI", "23", "16", "7,192", "0xa5643d9b4a2049d578a690269dbc13426b352672"], ["Rocky BALB0A", "19", "16", "8,300", "0xd98695e2fce07e908c9f523387b1b1f8eb9d41ec"], ["CryptoGreen", "27", "15", "5,830", "0xa6ab5ca03954e8b2bb54e9006efb8e68824271fa"], ["just an honest farmer", "28", "15", "5,472", "0xa915023b3ed1e00e078789e63de079b4d6dcc348"], ["BOO!", "29", "15", "5,132", "0x03b16ab6e23bdbeeab719d8e4c49d63674876253"], ["E.T.", "35", "14", "3,342", "0x2b29518e5ac3eda4cfc138facd6f023bffc5d65a"], ["Gaia", "36", "14", "3,224", "0x60c4ae0ee854a20ea7796a9678090767679b30fc"], ["Magnoos Carlsen", "32", "14", "3,684", "0x83cf9940ec7bb2ade83aa36501df3a2264727b70"], ["Butch", "30", "14", "4,276", "0x96fe6681b5b8be0c5d6e8eb690adec7ecb0831c9"], ["Diogenes", "31", "14", "3,780", "0x180f207f8747a966ec94277a69610162d7fa3ff1"], ["DIVA", "33", "14", "3,610", "0x0412f214fa215dda71e1184cad1652884e4b8c57"], ["Ono", "34", "14", "3,484", "0x3c2b45d1a4accb2c639c35bd0106d45c20424e8e"], ["Sol LeWitt", "42", "13", "2,434", "0x03b16ab6e23bdbeeab719d8e4c49d63674876253"], ["Leroy Jenkins", "45", "13", "2,246", "0xc0ab521fa3ff034029c206eebbb481e06c8d8bb5"], ["Gotchi Battler", "41", "13", "2,614", "0xb3e2a7b1295d9ee03e1f300dfccaab2ecd47ee53"], ["Zeldaa", "43", "13", "2,356", "0x472d7e705f3baa44f82bff5b397330015d810828"], ["Baelen", "37", "13", "3,060", "0x20906e454a9d20181350630ead131d8dfa21dd3f"], ["Litepiglet", "44", "13", "2,320", "0x9730299b10a30bdbaf81815c99b4657c685314ab"], ["WANDAAGOTCHI BLAACKSMITH", "39", "13", "2,798", "0x5cc81f1afa43f8f3c65fc9ce96d5a0568f4e285f"], ["Slide", "40", "13", "2,706", "0xa532f169cee0e551d4da641031ac78fd85461035"], ["Bull #1 ( MAGE )", "38", "13", "2,888", "0x01c28a969a7d0ba03419c8c80be59928c4732cd9"], ["~Sweety~Pop~", "50", "12", "1,746", "0x7d9fb540504d8f277099472b89113485f712c546"], ["raredan", "53", "12", "1,620", "0xc3c2e1cf099bc6e1fa94ce358562bcbd5cc59fe5"], ["ChamallowGotchi", "46", "12", "2,050", "0xe2de15659663f7024699e1e573c033e2efd5bcb1"], ["Buddha Gotchi", "52", "12", "1,642", "0x96fe6681b5b8be0c5d6e8eb690adec7ecb0831c9"], ["Eyez-T", "51", "12", "1,730", "0x478fa4c971a077038b4fc5c172c3af5552224ccc"], ["Yoda", "54", "12", "1,576", "0xe88632728ed377f556cb964e6f670f6017d497e4"], ["Lukso", "47", "12", "2,012", "0x6b0ab64ba82dab64130fcd7dc1e2f803f7aef730"], ["Rui", "49", "12", "1,818", "0xdb10d21f28a34fd04e4425eac777483798f7e217"], ["BWA", "48", "12", "1,902", "0x451d5140852b90ba1f337d9094a359323341fad2"], ["#######", "61", "11", "1,188", "0xdb10d21f28a34fd04e4425eac777483798f7e217"], ["KOVID KILLA", "55", "11", "1,536", "0xff67a86a01c7c90b0c3f3a26b65c25f432ec1751"], ["JAG DE BELLOUET", "60", "11", "1,268", "0xedd46a46aa5af54ad3c8a651caee2c75c9f2c325"], ["foolish", "57", "11", "1,500", "0xb3e2a7b1295d9ee03e1f300dfccaab2ecd47ee53"], ["WebVR", "56", "11", "1,510", "0x019ed608dd806b80193942f2a960e7ac8abb2ee3"], ["Goro", "58", "11", "1,332", "0x77427023e70cafd983dabaf3488d8d83ecb15b96"], ["Fantasy", "59", "11", "1,308", "0xc727bff1962590c71a6cb56c6d11f37bee740a5d"], ["Prinsus Butterhercup", "62", "11", "1,134", "0xfaff4170e628aef5c5ce84c47ebddb5a99517fe2"], ["Nadeko", "57", "11", "1,500", "0xd527f891aff7e277b9b8ccc2d9509b924f42f2e2"], ["aavegotchi.eth", "69", "10", "928", "0x635c1bafe7b01a8c52c73cba97a35b4b8d96ae81"], ["Pepegotchi", "74", "10", "806", "0x638dd68ae2a2563645fcaaff2e84910aa21f9ae6"], ["STAR", "71", "10", "884", "0xdab73a0b1fe28197942915bfef5b5c321514045f"], ["Gaius Julius Caesar", "63", "10", "1,096", "0x677975399cbd8aa7bd17a4b87c04ed07a85978d4"], ["Model S", "65", "10", "1,048", "0x579361d2636152df34db1d6dfd343f5037ddc71d"], ["BoyBoy", "70", "10", "904", "0x7d1368528d8dd105368c91700f1ac30d81628794"], ["Sleepy Supreme", "64", "10", "1,054", "0xb3749ab08c12ae8bcd95a5f11272927a2ebc36d5"], ["Miya", "67", "10", "968", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["Kevin", "66", "10", "984", "0x8347eb85648d2079604010ddb7649ce1cea8c2fc"], ["Jolla Sakkinen", "76", "10", "790", "0xb0c4cc1aa998df91d2c27ce06641261707a8c9c3"], ["KonMari", "73", "10", "828", "0xf7789fa997beeb4fec6ba288af857a6943743ec7"], ["The Buddha", "68", "10", "952", "0x305ea81690998383a6965244092b66f9692af230"], ["Beatrix Kiddo", "75", "10", "792", "0x7af4922fc22037d573e889201be7c38e42f22220"], ["Awkwardai", "72", "10", "840", "0xd7fd128a2fd1382fb286cb82b756f7b0e983b5a1"], ["####", "77", "9", "766", "0xa915023b3ed1e00e078789e63de079b4d6dcc348"], ["Dr Wagmi", "82", "9", "694", "0xd281f988242c900d67ff2aafabe683b8004ee778"], ["names", "85", "9", "646", "0xf517639a8872e756ac98d3c65507d2ebc25cc032"], ["@LoveGotchi", "91", "9", "578", "0x37e2a074b7bed2bf2e35c3767a8b673db2658bcc"], ["Vanilla", "87", "9", "606", "0x08f60772b777066078128a88eec73615372b7027"], ["Cunning Linguist", "84", "9", "664", "0x1a760e3a431c8b9c075ed1280c8835a1a0f1651b"], ["ZANGETSU", "83", "9", "690", "0x735194b0ff3d9fca8561770ebf484eac90b46647"], ["Monster Truck", "81", "9", "700", "0x2d5f86cd294ca6c92189340eaeff41fc63dc66ef"], ["Henry Lee Gotchi", "80", "9", "738", "0xa1bbd8d39ed536dea030a32f3f6c5916c845a800"], ["Moonspell", "90", "9", "588", "0xe1bcd0f5c6c855ee3452b38e16fed0b7cb0cc507"], ["Xenomorph", "78", "9", "750", "0x9ff84b91998df96a6587db8dde8d4e47518107d6"], ["Reverend P W Meleeth", "86", "9", "628", "0x072b96cf92aa03f453ccfb114a166d11f88a3414"], ["DeGods", "88", "9", "602", "0x2b29518e5ac3eda4cfc138facd6f023bffc5d65a"], ["MAASTER", "79", "9", "742", "0xdf631777df4debcbcd647e85bdcb868b43663ba0"], ["Bull #2 ( NINJA )", "89", "9", "594", "0x01c28a969a7d0ba03419c8c80be59928c4732cd9"], ["Smash", "103", "8", "406", "0x262336fd3eda533826aa4c92c9f23563f9f90693"], ["SKIPPER", "102", "8", "420", "0xa9465d03ba38726277b3e478ac98aa063a0c8d0a"], ["WANDAAGOTCHI CONAAN", "95", "8", "512", "0x5cc81f1afa43f8f3c65fc9ce96d5a0568f4e285f"], ["Inquisitor", "97", "8", "500", "0x4edb4161d16c89b71aec027930a943c3d4cf0777"], ["eth eyes 2", "105", "8", "396", "0x38798bfb6016beeeae2b12ed1f7ba2c9bb49334f"], ["Blue Moon", "97", "8", "500", "0xa532f169cee0e551d4da641031ac78fd85461035"], ["Mamluk", "96", "8", "508", "0x941a95e58a293f1d8b5b43dfbde07569ca96bd90"], ["hot curly fry", "100", "8", "450", "0x579361d2636152df34db1d6dfd343f5037ddc71d"], ["Jason Gotchi Bourne", "92", "8", "528", "0x3621fd0db8dabc21d522851de01114cf82b7c21f"], ["GFA - Nidorino", "93", "8", "526", "0xa98e714577ad2b41efbcb5f79c3cd663bc806905"], ["Newt", "105", "8", "396", "0x43ff4c088df0a425d1a519d3030a1a3dfff05cfd"], ["Edwaard Haammerhands", "106", "8", "378", "0x870c597d1b52dfc977169778a591f1170b3a2338"], ["Bloob", "101", "8", "436", "0x6eb13bf70edaade22b0c5a7f0de7138ce96d53db"], ["Nautty Gotchi", "104", "8", "398", "0xa423687ddf458a3a0ae4b738dc2cca3c4312a742"], ["LOW STATS GEM", "98", "8", "482", "0x755a89ac371ee91c1e0fc313bc9eff5fc150b993"], ["Metataakser", "94", "8", "522", "0x2f08d099c60823ce5955e747909d216dcbc9bf21"], ["SOJU", "99", "8", "480", "0x8cbf96319b3c56d50a7c82efb6d3c46bd6f889ba"], ["Ray finkle", "109", "7", "354", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["Cuddle Bear", "108", "7", "360", "0x6360ea0e3af36b7b51cf7e4f810370dd5a8cdc0f"], ["Bro Wagmi", "116", "7", "320", "0xf17faf9978b2f0087e6c78553ede42d15abf76c5"], ["Doomed Dolla", "118", "7", "294", "0xf00660c5b3c125a5137a4e3f3ec98035b76d01c6"], ["Gaarp the Fist", "121", "7", "264", "0xfaff4170e628aef5c5ce84c47ebddb5a99517fe2"], ["Occultist", "117", "7", "318", "0x7dbfe62be1ac737d26823611f251d362c52a1141"], ["FrogByte", "110", "7", "348", "0x119b91827df70f4378de9912fdfa101fb40364b8"], ["6-28-1971", "119", "7", "284", "0x7e784506087d8336e34223b0ca998aa6f666fb39"], ["", "121", "7", "264", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["", "112", "7", "338", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["NERDDESTROYER", "116", "7", "320", "0x6feca0738ba64d7aee428f1bf31c743a9a243a8c"], ["SKULLS", "114", "7", "330", "0xf2b9ec5724dc97362a53907c0b4cc0aa72369e63"], ["Z E N", "114", "7", "330", "0xf8c82ff30d2ace28e34d2101d4aed3a2a872d50f"], ["Arbalest", "120", "7", "278", "0x7dbfe62be1ac737d26823611f251d362c52a1141"], ["Boo Berry", "107", "7", "368", "0x8e63e4376dde62cb82f5a91c4bce4156457dedb1"], ["", "122", "7", "260", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["beeg peepee", "113", "7", "336", "0xa7f1c77998bae58614be010ad2a806639e280056"], ["Silent but Violent", "115", "7", "326", "0xf1950fc03486a502b05f93df1a7a4edc741257c6"], ["Pickle Rick", "120", "7", "278", "0x60523cd3f5cf0061c6f042545371fa6ff8cd397b"], ["R E KT BOI", "111", "7", "344", "0x0a25bc1f7932e43d4c328c6c96c23a460417e075"], ["Excalibur", "117", "7", "318", "0x6fcf9d80e2b597f4b3fa764b5626f573a9fc93d3"], ["Caesar Keys", "130", "6", "212", "0x939b67f6f6be63e09b0258621c5a24eecb92631c"], ["Darthowl", "130", "6", "212", "0x95a8cce18e2959ea8cbba9610a980c4200ce1fee"], ["Because I can", "131", "6", "208", "0x59e9f8f07f9d339c48c8521af341a1a2337a9e22"], ["GFA_FiFoOoO#8782", "130", "6", "212", "0x1a08b4d6497fa6d5970bd8f6c72bc5fbc8dd500e"], ["Rudi Randaale", "126", "6", "242", "0x3ca2e945a3bc25399c75f49e9e45d34d897c1041"], ["Mr. Buterin", "133", "6", "188", "0x9b81fcdb243ff7137afcb77209d1d4be9dc3a6b2"], ["Cyclopse", "131", "6", "208", "0xf517639a8872e756ac98d3c65507d2ebc25cc032"], ["President Dildah", "134", "6", "182", "0x5aa0820ea5d4bfb7197d1dcca2bde940a122ddf7"], ["White Ranger", "123", "6", "248", "0x4d6e3ff00f77f6e746ebf7f6827800eb99e36910"], ["Vito", "130", "6", "212", "0xb60dd5f030b68beb38fea0c414771acda899fcaf"], ["DAIddy Kong Jr.", "132", "6", "198", "0x67da637a5d8db19b16235801e2c768f369d95a0c"], ["Chaannel Supreme", "130", "6", "212", "0xb3749ab08c12ae8bcd95a5f11272927a2ebc36d5"], ["CHOPIOU", "124", "6", "246", "0x3aef590df6febaa81477c1cea3009bb9e096730c"], ["Micro", "131", "6", "208", "0xb9ff017c875f5c39d0018d1df86fbd92943d5b82"], ["HAUSER VON DROPT ROUSER", "134", "6", "182", "0xa5643d9b4a2049d578a690269dbc13426b352672"], ["taranis", "129", "6", "218", "0x5f5130215a9be6b34a986fab0679a61dbba1bddc"], ["FOUR", "127", "6", "234", "0x865e86f4ad3c8362748987999513f803bde68ad7"], ["mr s nakamoto", "128", "6", "224", "0x00d672e53e8e9bcd4ee4bb2f05032b3c25e3c04c"], ["Chef Garchu", "125", "6", "244", "0xf7b10d603907658f690da534e9b7dbc4dab3e2d6"], ["BigKingus", "127", "6", "234", "0x09a1a849974d021a0f74366e5020884ff73e3abb"], ["fan fan", "143", "5", "136", "0x38798bfb6016beeeae2b12ed1f7ba2c9bb49334f"], ["Zojirushi", "138", "5", "158", "0xb0ce77b18b8663baa0d6be63b7c5ee0bdf933001"], ["aavecado jelly", "145", "5", "122", "0xf517639a8872e756ac98d3c65507d2ebc25cc032"], ["GLTR SLUT", "142", "5", "148", "0xcbef46a7cbe1f46a94ab77501eaa32596ab3c538"], ["Treasure Hunter", "140", "5", "154", "0xd94fb9ca07c488c43e8480b6a8cb3063bb43e219"], ["CHOPENPLAP", "146", "5", "118", "0x3aef590df6febaa81477c1cea3009bb9e096730c"], ["Teemo", "143", "5", "136", "0x09a1a849974d021a0f74366e5020884ff73e3abb"], ["Zerk", "135", "5", "170", "0x6701dc817396c99e40e31f2724ea966e2832492c"], ["HolyGraail", "147", "5", "116", "0xdb10d21f28a34fd04e4425eac777483798f7e217"], ["Bull #11", "147", "5", "116", "0x01c28a969a7d0ba03419c8c80be59928c4732cd9"], ["reserve", "144", "5", "130", "0x4177a5c0e2369f6830a4c3825afc8fb3dd47790d"], ["ETH EYES", "145", "5", "122", "0x38798bfb6016beeeae2b12ed1f7ba2c9bb49334f"], ["The Fallen Gotchi", "139", "5", "156", "0xb3e2a7b1295d9ee03e1f300dfccaab2ecd47ee53"], ["Gozer", "136", "5", "162", "0x6157730c4f8e2092f601460b836530e3252b3120"], ["Modern Human", "141", "5", "150", "0x606caf480f6d21dac9808661e1e4e6e58db12bcd"], ["Supreme Portal Mage", "144", "5", "130", "0xb26b5566cb575990cd5dd9c93c43ee39a02befba"], ["Soft Machine", "137", "5", "160", "0x96fe6681b5b8be0c5d6e8eb690adec7ecb0831c9"], ["What about Bill?", "151", "4", "96", "0xe099d8ac97fcb3eb13a3fe080ff3b5a8ff6b94aa"], ["Pennywise", "149", "4", "104", "0x326475cc33b6b03e71bef82b51586d0fd466ca42"], ["JOHI CHOPIOU", "159", "4", "70", "0x3aef590df6febaa81477c1cea3009bb9e096730c"], ["540+", "148", "4", "106", "0x40aed3f394f2f0c168d4033a31ecf2248197ddfb"], ["Gene Takavic", "148", "4", "106", "0x9730299b10a30bdbaf81815c99b4657c685314ab"], ["Arya Stark", "148", "4", "106", "0x262336fd3eda533826aa4c92c9f23563f9f90693"], ["Dreamer", "149", "4", "104", "0xae5b56ca47e84b6c749e0454680c4161b9da9790"], ["sl1m", "154", "4", "86", "0x40aed3f394f2f0c168d4033a31ecf2248197ddfb"], ["Timothy Leary", "158", "4", "74", "0xa02a7a705c8776c58fc8f3f8df5189eaef8f26fd"], ["og link marine", "157", "4", "78", "0xa7f1c77998bae58614be010ad2a806639e280056"], [",", "159", "4", "70", "0x57a2e7672042e1ce4cd365a8b5cd4ada2d8a8a5e"], ["MARI A ME VIDA ME AMOR", "155", "4", "82", "0xfec90ee4a1ea9ccff0d1971c61fe5a4488594a58"], ["WuzziJesus", "155", "4", "82", "0x79f563398ff8a5a5ff18650e56b9bac8be84bfa5"], ["DrAAVEn", "150", "4", "102", "0xa9a0c84fe5780d5a5c67cc14165b546f8ec6dcab"], ["Che Guevara", "152", "4", "90", "0x8f652eff4ba275e023f124a98af86025ab0e5eec"], ["Diffuse Loop", "153", "4", "88", "0xeb8c587a8b3bcb23efbf6d4e41c6ac1f90bf5c27"], ["MC HAMMER", "158", "4", "74", "0xc89a3292eb0a8396a2505deb6195afa7f83a8a30"], ["pvp:Enlightened", "151", "4", "96", "0x60c4ae0ee854a20ea7796a9678090767679b30fc"], ["Vsevidof", "148", "4", "106", "0x7fbd1e4c9449c2443e0ad17537d77645bd23cc21"], ["The Notorious", "156", "4", "80", "0x9fe6d7d5e9c9e3bff91149fbf731b618cbce3375"], ["Billionaire Boys Club", "158", "4", "74", "0xce11bb6e05aa5fdfacbf83088962afd7beb8e72d"], ["Highwayman", "148", "4", "106", "0x7dbfe62be1ac737d26823611f251d362c52a1141"], ["Chainlinkgod.eth", "149", "4", "104", "0x09a1a849974d021a0f74366e5020884ff73e3abb"], ["Tether USDT", "173", "3", "38", "0xa9a0c84fe5780d5a5c67cc14165b546f8ec6dcab"], ["PapaMay", "163", "3", "60", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["Perucho TEC", "170", "3", "44", "0xeb7989a7c04b70cea2bef6c2160ab7afca2a0d98"], ["AYA", "168", "3", "48", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["smile295686", "169", "3", "46", "0x551486c2335d027662b4c603ac203d7a7b30320e"], ["Drug dealer", "162", "3", "62", "0x08222711f4c3258a900ec1415088a907b8821de9"], ["Viserion", "160", "3", "68", "0x4f46c9d3257d95e35a2441df2fdf293af13f47d9"], ["december", "166", "3", "52", "0x974da3d8657f3dabce994a461c86eb2882439bcf"], ["CLAUS", "166", "3", "52", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["*** CHEAPEST 525+ BRS ***", "172", "3", "40", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["BelleWETHer", "169", "3", "46", "0x85362d4700d2f8d55d1d779b31b837c863ae3c14"], ["MYTH EYES + MYTH BRAIN", "170", "3", "44", "0xdb10d21f28a34fd04e4425eac777483798f7e217"], ["Iean", "168", "3", "48", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["GWEI", "170", "3", "44", "0xf22f00d0b95b1b728078066e5f4410f6b2be8fae"], ["Spindrift", "166", "3", "52", "0x69800c3279115d92523ae66261600c6193e25950"], ["Aavesome", "169", "3", "46", "0xc727bff1962590c71a6cb56c6d11f37bee740a5d"], ["Stable", "171", "3", "42", "0x119b91827df70f4378de9912fdfa101fb40364b8"], ["Sgt. Geller", "166", "3", "52", "0x8e4bdd156e4dd802dd919f4fd2645681ce99a538"], ["gamer stomper", "162", "3", "62", "0x8b200f4c81c54d9014b4cda3f16501069fa20ab9"], ["Sushi Licker", "172", "3", "40", "0x64ede8205e24e3f804e4facd895c82222dbec049"], ["Amitta", "160", "3", "68", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["Amide", "163", "3", "60", "0x72db34299d4bb489993a49822708ce692cca3eb2"], ["FISHER", "166", "3", "52", "0xb9d8286cb05c873aeb564cd5fe1338a38fb3bb39"], ["Raffaello", "173", "3", "38", "0xa7f1c77998bae58614be010ad2a806639e280056"], ["Ketun Vitamiini", "170", "3", "44", "0xe908c2d5613d24d49e376f19715c795db8e04f81"], ["Jin Sakai", "173", "3", "38", "0xa64f7eb2e0888ebfee31f7bccbe86555c51cfad3"], ["Nicolas Sarkozy", "165", "3", "54", "0x0a38c3a976b169574bd16412b654c1ee0db92e1b"], ["Mia Khalifa", "173", "3", "38", "0x75bbecbc4fa323d304e41dd383f1f1878288db00"], ["Wiz", "166", "3", "52", "0x59e9f8f07f9d339c48c8521af341a1a2337a9e22"], ["AKI MAITA", "166", "3", "52", "0xa2faa3405a734c04ae713aaa837e6cecc2caee9f"], ["Mr.DAI", "161", "3", "66", "0x09a1a849974d021a0f74366e5020884ff73e3abb"], ["Trottr, The Horse", "164", "3", "56", "0xf8f94c0733a28919dcfa6c52668c688234359d88"], ["MONEY", "168", "3", "48", "0xbf915c743b25e9e2bb2a9894f13d3bd2832dfe7a"], ["Menace", "173", "3", "38", "0x4f40a1df071cb1e5a3532fc14b60b6a5d4bb27b9"], ["Rektboi", "167", "3", "50", "0xbdc7a955505e20410061744f556f6dec761bfb8f"], ["Tethergotchi", "162", "3", "62", "0x724e89f85e2b9c6a92e1a187fd521886d9b65311"], ["Kurt Russell", "184", "2", "16", "0xe7cbb8d73e5ca000816910f100d60b5fe33588f7"], ["Sora", "177", "2", "30", "0xcbef46a7cbe1f46a94ab77501eaa32596ab3c538"], ["GhostyFever-TeamG", "180", "2", "24", "0x3d3d9e2f292ab523d2c518813be4416d1d641621"], ["uruguay", "180", "2", "24", "0xffea5a2cfaf1aafbb87a1fe4eed5413da45c30a0"], ["Tinkerbell", "178", "2", "28", "0xaa2e9db394445c28349465b530248233e936a764"], ["Aavetokounmpo", "184", "2", "16", "0x2436809f5a2db19ab11b838bdb2d9c33694a8fa8"], ["XFACTOR2", "180", "2", "24", "0xe1a077b679f206073d85c3a62258f0e7ce3c9630"], ["VGHST", "182", "2", "20", "0xa499df2bdae854093e5576c26c9e53e1b30d25e5"], ["Prince [Synth]", "174", "2", "36", "0x8628d73d3f950abde99739ef34b6cfa10394f579"], ["abid", "182", "2", "20", "0x10dbc99c90234e4447f0366e8368d688f622475a"], ["Fiat", "184", "2", "16", "0xb5625ce0797a7a93eaf9fbbcf097862be18efd07"], ["Cotton Candy", "184", "2", "16", "0x6701dc817396c99e40e31f2724ea966e2832492c"], ["Fuku", "183", "2", "18", "0x96fe6681b5b8be0c5d6e8eb690adec7ecb0831c9"], ["Nine", "183", "2", "18", "0xded7cfb53cf1658e07432a3c4c8c0064d5bd626a"], ["Tether FUD", "180", "2", "24", "0x195d845b4f78e4d7ca269805715830d6ec892c21"], ["NFT", "174", "2", "36", "0xed7d2286152b3ac0151b06e4f3dfba37acc5a634"], ["JOHI BONDING", "184", "2", "16", "0x3aef590df6febaa81477c1cea3009bb9e096730c"], ["Guardian Gotchi", "176", "2", "32", "0x18c6a47aca1c6a237e53ed2fc3a8fb392c97169b"], ["Born 2 Dai", "182", "2", "20", "0xf3fbb2c0a711529ef9b81fe59a5ef5b8f1e0eb27"], ["CAPTAIN CHOPIOU", "180", "2", "24", "0x3aef590df6febaa81477c1cea3009bb9e096730c"], ["Steve Ellis", "177", "2", "30", "0xe1a1d5c32888c5b140917b296e82cf3a448f37a6"], ["Overkill", "180", "2", "24", "0xe5f6dbc39334f3e79c149efb8c8c9c8dec474af1"], ["My first child", "183", "2", "18", "0xa7f1c77998bae58614be010ad2a806639e280056"], ["GEI$T", "184", "2", "16", "0xa9465d03ba38726277b3e478ac98aa063a0c8d0a"], ["Leky Fleky", "174", "2", "36", "0xb6e6172a1caf201c1fde4f111b67a4b857def0ba"], ["KingShip Rank 234", "184", "2", "16", "0x38ff11d71e32d6a97da15bdcfbcdfccdeda9e637"], ["B|tco1n", "178", "2", "28", "0xa9a0c84fe5780d5a5c67cc14165b546f8ec6dcab"], ["FudNugget", "184", "2", "16", "0xce11bb6e05aa5fdfacbf83088962afd7beb8e72d"], ["Mythlangelow Frendici", "178", "2", "28", "0xf31b40dbcba528f2cd6ea9d65058be320175d259"], ["Faantaasmaa", "183", "2", "18", "0xa7f1c77998bae58614be010ad2a806639e280056"], ["REALM", "179", "2", "26", "0x40aed3f394f2f0c168d4033a31ecf2248197ddfb"], ["BTC KNIGHT", "179", "2", "26", "0x20b3fb70cfeb01ac7ea11a412572848139a2b748"], ["Party Elf", "184", "2", "16", "0x38798bfb6016beeeae2b12ed1f7ba2c9bb49334f"], ["WuzziSchiZzo", "180", "2", "24", "0x79f563398ff8a5a5ff18650e56b9bac8be84bfa5"], ["Black Widow", "181", "2", "22", "0x1c28b4f1c0ce16597d52fff5978080a3fe4d119c"], ["Je Suis Fatigue", "180", "2", "24", "0x1441bae48b5da3da1d6e48c2c5b033fcbf6ee759"], ["Jimmy CrAAck", "184", "2", "16", "0xe7cbb8d73e5ca000816910f100d60b5fe33588f7"], ["Frenless Summer", "177", "2", "30", "0xcbef46a7cbe1f46a94ab77501eaa32596ab3c538"], ["Youshouldpissyourpants", "174", "2", "36", "0xa7f1c77998bae58614be010ad2a806639e280056"], ["Zaunzi", "184", "2", "16", "0xce3214768474f006c50189d2d9583f19e3791f96"], ["Polyg00n", "182", "2", "20", "0xf8a52a9d5e7e87dff2e815d3ac3e4e7866e54e2e"], ["Stimmies", "183", "2", "18", "0xa7f1c77998bae58614be010ad2a806639e280056"], ["Ronnie", "175", "2", "34", "0xce3214768474f006c50189d2d9583f19e3791f96"], ["Muffin", "182", "2", "20", "0x70d5d2b8158baf512c16d03f75f0fb77a1c4a4b7"], ["Q-Art-E", "183", "2", "18", "0xa6b49397ce21bb62200e914f41bf371e5940bb41"], ["Jolly Roger", "183", "2", "18", "0x5e4568c4d8343052a06ec8aab1e124af08b73248"], ["Zeep Xanflorp", "174", "2", "36", "0xcd8eddd0a27047d53d65f23d483a8a169d54526b"], ["Sergeant Hartman", "180", "2", "24", "0xe0c43cf26b0bacb408c6334468700179c61aeebf"], ["GFA - Moula", "184", "2", "16", "0xcc65af377188153f157878705ba0623a5646c0ac"], ["Captain Great Ball", "184", "2", "16", "0xe23da0be88c9b56c815c0525e5c1c687a99a8def"], ["Daanger", "184", "2", "16", "0x64ede8205e24e3f804e4facd895c82222dbec049"], ["Satoshi__Nakamoto", "180", "2", "24", "0x6360ea0e3af36b7b51cf7e4f810370dd5a8cdc0f"], ["Cryptozilla", "184", "2", "16", "0xac4734d5cd80c12f3c90edc9dc5589c11ee17896"], ["you pay my tuna sandwich", "183", "2", "18", "0xa7f1c77998bae58614be010ad2a806639e280056"], ["R@pzard", "178", "2", "28", "0x680800f9e4a4bf3d61856beb12f58f0f62c99257"], ["Legitness", "183", "2", "18", "0x59e9f8f07f9d339c48c8521af341a1a2337a9e22"], ["PEPE by UR3N.D0RF", "182", "2", "20", "0x4cccae1704ce061edfd97d4e26038d6b4428c317"], ["Saint Guilhem", "183", "2", "18", "0x90a4b451e0014476f5dd586b6fa4bc8319d5a39d"], ["eSveeTether!", "182", "2", "20", "0xc6291442efe2634306b31f24c8238a702fec85a0"], ["wish-bish", "180", "2", "24", "0x5d5cc66fc2f3829c399e47f7b71a5be4918a8851"], ["Max Regen", "183", "2", "18", "0xd72882b70352ca8a56750db9c9abcfa95e4cbfe7"], ["Super Geckogotchi", "190", "1", "4", "0x38798bfb6016beeeae2b12ed1f7ba2c9bb49334f"], ["The Real Noname", "189", "1", "6", "0x0465c733bcbc4e15f15d393d919cf6dc8ae757ce"], ["Eva Lovia", "190", "1", "4", "0x75bbecbc4fa323d304e41dd383f1f1878288db00"], ["SpectreUSDC", "188", "1", "8", "0x059c78aadca79427358c3d6a2e1877494e78ca8a"], ["Thomas Hobbes", "189", "1", "6", "0xc0c3a547231ea6aebc543826bc55895b015467b3"], ["Ghost.Love", "188", "1", "8", "0xe7cbb8d73e5ca000816910f100d60b5fe33588f7"], ["Seamus MacAbandonpants", "185", "1", "14", "0x65e856c356f0c220fc69c51a66b007748c7596e4"], ["gentle monster", "190", "1", "4", "0x0add4eccfed27fbadcbc62d8166439b596a1f1a0"], ["Hamburglar", "190", "1", "4", "0xc4cb6cb969e8b4e309ab98e4da51b77887afad96"], ["Odin's Bastard", "189", "1", "6", "0xb2ead8bb7446cc130c3c515fae31c1865ed66aaf"], ["BTCGamer", "188", "1", "8", "0xd61a6fb2c107a02459f069a6701debb45ef21fd4"], ["OLANDER", "189", "1", "6", "0x66666680fcea75e219c7203bc79e60448c1f692a"], ["Omaha", "189", "1", "6", "0x0d15764e7f13e780ca0ae83a15a8d819db05ef2b"], ["Cool Hand Luke", "190", "1", "4", "0x4572192ed1dee5fd0f8f07269be4ef3e3e270715"], ["Rico", "191", "1", "2", "0x79d87c8bef0f0620d773983a6be6ddca784ca8a9"], ["Tel-Aviv", "189", "1", "6", "0x730ca23bcd88802da1e19766db0a98e005d8fda1"], ["Dullard", "191", "1", "2", "0x37a6156e4a6e8b60b2415af040546cf5e91699bd"], ["Bill Ackman", "188", "1", "8", "0x4da4a2f69cb2f61a49efb7423b1f093b79c6f1f2"], ["Fuzzy Wuzzy", "190", "1", "4", "0xc4cb6cb969e8b4e309ab98e4da51b77887afad96"], ["Dynamis", "188", "1", "8", "0x5a6c0ff57d4416bd1158d68ce01973a66a35dd1a"], ["kenki", "189", "1", "6", "0x9b5416219dc491519cdf4523c0c2ed290b780a9f"], ["Yearning", "191", "1", "2", "0x24970b51dd29dc2dfa264cd51c41998c68e3d7e6"], ["TRUECHAD", "190", "1", "4", "0x60523cd3f5cf0061c6f042545371fa6ff8cd397b"], ["Zappy ++++", "185", "1", "14", "0x246e3e91c8f3db1326563800d6d28aa27c7ccf40"], ["Champai", "190", "1", "4", "0x9a84e06d9bc2254c82f5dc70e089896aa24609fe"], ["Beach Biker", "190", "1", "4", "0xa9465d03ba38726277b3e478ac98aa063a0c8d0a"], ["ZEN ETH", "191", "1", "2", "0x67c6b18a003424948eb8aa2b77bc93f0cbae7383"], ["Elfeth", "191", "1", "2", "0xa02a7a705c8776c58fc8f3f8df5189eaef8f26fd"], ["Wasp", "186", "1", "12", "0x77427023e70cafd983dabaf3488d8d83ecb15b96"], ["Yung Money", "190", "1", "4", "0xff67a86a01c7c90b0c3f3a26b65c25f432ec1751"], ["Battle Scars", "189", "1", "6", "0x8b9a3787dfa6d221990967c7aee4c6f7237649a4"], ["Creamy", "189", "1", "6", "0x65316dc17cd7009b373f4f0e48f27d62ae4b921f"], ["Spongeboss Mystic Eyes", "190", "1", "4", "0xabf128d4be3072cdfcb021e702d2b8d8437c789d"], ["Rhaegal", "190", "1", "4", "0x4f46c9d3257d95e35a2441df2fdf293af13f47d9"], ["Pitch", "191", "1", "2", "0x92db5dcbf375fa203c9cb60f095c5800d59f0a3e"], ["lemon", "190", "1", "4", "0x10dbc99c90234e4447f0366e8368d688f622475a"], ["Nipponape", "189", "1", "6", "0x303f68639795a93778a205b8c050bd1d1136cb95"], ["Aair Rare", "188", "1", "8", "0x223225118acb4917daa96822033ee941e850f394"], ["Paramatic", "190", "1", "4", "0x9000984de4e47555141f7d6e4183564f4868e6c6"], ["Space Invader", "191", "1", "2", "0x7a05b87f0e95c3abe3f296017c69b5a62c82e286"], ["ponzi gotchi", "191", "1", "2", "0xc3c2e1cf099bc6e1fa94ce358562bcbd5cc59fe5"], ["gamekeeper", "190", "1", "4", "0x5b95a971b4583a5f011e9da082acdd679b870d06"], ["Those Eyes WOW", "189", "1", "6", "0xd4ffce70f7c3c6a8d099a587280320586fbe5595"], ["LOGO AAVE 9345", "191", "1", "2", "0x2caddc157c78db7d1cd70a898152e2c2dc1ad39b"], ["STINK PICKLE", "186", "1", "12", "0x5039e2936ec2a588cad92e4edcf41a1d3a443186"], ["GFA - Brolian", "190", "1", "4", "0x8840603a7df575a6ea1f70280d4001b64282aaa8"], ["ChatGPT", "189", "1", "6", "0xcbef46a7cbe1f46a94ab77501eaa32596ab3c538"], ["Look like LOGO .", "186", "1", "12", "0xf257403742b622ade40bdd38679c978eb371cceb"], ["Rarity", "189", "1", "6", "0xf8856124ea157d6f26472e38224ee6744ad13af3"], ["PolyMaster", "189", "1", "6", "0x4f46c9d3257d95e35a2441df2fdf293af13f47d9"], ["mr saaturn", "191", "1", "2", "0xb227d641c00ee70d3e1207096e50ff7dd933056e"], ["Fabio", "190", "1", "4", "0xffea5a2cfaf1aafbb87a1fe4eed5413da45c30a0"], ["", "185", "1", "14", "0xbba31530cd8e112be845da468b72fbbfe739387a"], ["Pink Paper", "188", "1", "8", "0x73e9c88d26343eca36bb1297cfd0f8d6f02ff8ea"], ["Daedalus", "190", "1", "4", "0x7784996f0c9cf60211899584d854fb74f8ff23da"], ["BromeBR", "191", "1", "2", "0xad0ceb6dc055477b8a737b630d6210efa76a2265"], ["MUSUBI", "189", "1", "6", "0x8cbf96319b3c56d50a7c82efb6d3c46bd6f889ba"], ["Mr. Kulechov", "190", "1", "4", "0x9b81fcdb243ff7137afcb77209d1d4be9dc3a6b2"], ["SILENT", "191", "1", "2", "0x156e6c5a2fac34bb2fcf2ac1bbaa0e75bde3ac4f"], ["cameroon", "190", "1", "4", "0xc727bff1962590c71a6cb56c6d11f37bee740a5d"], ["AAVE", "190", "1", "4", "0xd8f35ef085d202fa7cad0e0c61da737b60e1f855"], ["NagrajGotchi", "190", "1", "4", "0xa6b49397ce21bb62200e914f41bf371e5940bb41"], ["Mr Wiggles", "190", "1", "4", "0xdd564df884fd4e217c9ee6f65b4ba6e5641eac63"], ["Grey Ranger", "189", "1", "6", "0x4d6e3ff00f77f6e746ebf7f6827800eb99e36910"], ["Ties", "190", "1", "4", "0x79d87c8bef0f0620d773983a6be6ddca784ca8a9"], ["Grey Wind", "186", "1", "12", "0x4f46c9d3257d95e35a2441df2fdf293af13f47d9"], ["BabbuWiiD", "189", "1", "6", "0xad0ceb6dc055477b8a737b630d6210efa76a2265"], ["Spaced", "191", "1", "2", "0x4332bcfc3a8df8b89b8ca524068051c8c3bd2c7e"], ["2361", "186", "1", "12", "0xa6b49397ce21bb62200e914f41bf371e5940bb41"], ["TRAVEGOTCHI", "190", "1", "4", "0x325ccba60e4a71c797587cb6b60839420378d2f5"], ["moonie", "191", "1", "2", "0x832bcec6559e5803bb20ad2f2fbbe3478e4e96e7"], ["Fox Mulder", "190", "1", "4", "0xd92ccd9b06c1df42f0287f84595230f4580ac4cf"], ["Yfirvaraskegg Mannlegur", "188", "1", "8", "0x18bfff508960710fee296502de84667c7f4e88cf"], ["PolyAave", "191", "1", "2", "0x1a08b4d6497fa6d5970bd8f6c72bc5fbc8dd500e"], ["SosoGotchi", "191", "1", "2", "0x08222711f4c3258a900ec1415088a907b8821de9"], ["NAADIEL", "190", "1", "4", "0xb652158f67b9fb39c29412d6f8e1c563ff6724f2"], ["Lizzard Wizard", "190", "1", "4", "0x6701dc817396c99e40e31f2724ea966e2832492c"], ["Clairvoyant", "189", "1", "6", "0xbd5f593c86319523e6e8afe60dedbefaedbdb8c9"], ["Shieldbreaker", "189", "1", "6", "0x7dbfe62be1ac737d26823611f251d362c52a1141"], ["Spec4", "189", "1", "6", "0x059c78aadca79427358c3d6a2e1877494e78ca8a"], ["Aamy", "189", "1", "6", "0x85362d4700d2f8d55d1d779b31b837c863ae3c14"], ["MiddleMen", "189", "1", "6", "0xb5625ce0797a7a93eaf9fbbcf097862be18efd07"], ["Lucky Star Boyz", "189", "1", "6", "0x0e3347baed6e6070097c978247ead2f716c4b7a0"], ["JoeD1rt", "186", "1", "12", "0x1e1ad9567b738be6756b2da6c7bc1d1094acdc4c"], ["Mork Zuckerbarge", "187", "1", "10", "0xf1ea4404203f5688a35efb5d76b23a87b0975ae1"], ["BOBA FETT", "188", "1", "8", "0x9098b23ed9cc4ca858b642af81442e9e591ff073"], ["The Bloody Baron", "191", "1", "2", "0x0bb14275f1cefb6bfadfe2be2880eae2fd04e3fd"], ["Ohmegaa", "186", "1", "12", "0x478fa4c971a077038b4fc5c172c3af5552224ccc"], ["Axie Infinity", "189", "1", "6", "0x445ba6f9f553872fa9cdc14f5c0639365b39c140"], ["Popps", "190", "1", "4", "0xf1950fc03486a502b05f93df1a7a4edc741257c6"], ["-Atlas-", "191", "1", "2", "0x6b0ab64ba82dab64130fcd7dc1e2f803f7aef730"], ["Fitzmagic", "188", "1", "8", "0x822b454196d281d43a3e127db3d37b7c0d78ab92"], ["Shasseo", "188", "1", "8", "0xb6e6172a1caf201c1fde4f111b67a4b857def0ba"], ["BOSS baby", "190", "1", "4", "0x579361d2636152df34db1d6dfd343f5037ddc71d"], ["Degen Erik", "191", "1", "2", "0xf5793f0affadbf3421a775d4e101f169c8abdc8a"], ["Spec2", "186", "1", "12", "0x059c78aadca79427358c3d6a2e1877494e78ca8a"], ["Xenia Rockfell", "186", "1", "12", "0x543d8004afa943344e6fba44e189ed0dd4e71d56"], ["el muchacho", "189", "1", "6", "0x9df245b9fbe7a26e35659bd40352564ef011f7e4"], ["yin/yang", "188", "1", "8", "0x9346c01def77c612b1c8e1ccf5ac6e15fe4c17e4"], ["Santa Clause", "186", "1", "12", "0x180f207f8747a966ec94277a69610162d7fa3ff1"], ["HAPPY DEVIL", "190", "1", "4", "0x2fbf312bec813210187075c2b098d515137c06a9"], ["White Paper", "190", "1", "4", "0x73e9c88d26343eca36bb1297cfd0f8d6f02ff8ea"], ["Your Fren", "191", "1", "2", "0x2b29518e5ac3eda4cfc138facd6f023bffc5d65a"], ["Gordon the Gecko", "190", "1", "4", "0x38798bfb6016beeeae2b12ed1f7ba2c9bb49334f"], ["KUZEBA", "191", "1", "2", "0xa1d38da3ce3ebe5081e7ad8a0ac2ab5d08541de0"], ["OKOPOHA", "191", "1", "2", "0xb0079fe46996d26edf01cff8ca6cee816b3b60cf"], ["aLINK MARINE", "186", "1", "12", "0x0a25bc1f7932e43d4c328c6c96c23a460417e075"]];
+
+    // Define the dt_args
+    let dt_args = {"order": [[1, "asc"]], "paging": true, "dom": "lftipr", "columnDefs": [{"className": "dt-left", "targets": [0]}]};
+    dt_args["data"] = data;
+
+    $(document).ready(function () {
+        
+        $('#f0a20993-d033-44d5-84ec-ff6b6ed346bf').DataTable(dt_args);
+    });
+</script>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div>Created by MikeyJay &middot; Made possible with funding from Aavegotchi DAO &middot; <a href="https://github.com/mikey-jay/aavegotchi-wearables-report">Source code</a> </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
